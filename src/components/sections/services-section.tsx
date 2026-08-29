@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { SERVICES } from "@/data/portfolio-data";
 import { ServiceItem } from "@/types";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/layout/section-heading";
+import { useLeadPopup } from "@/context/lead-popup-context";
 import {
   Zap,
   Globe,
@@ -31,6 +31,8 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 export const ServicesSection: React.FC = () => {
+  const { openLeadPopup } = useLeadPopup();
+
   return (
     <section id="services" className="py-12 md:py-16 bg-slate-950/90 relative border-t border-slate-900">
       {/* Background ambient lighting */}
@@ -113,13 +115,13 @@ export const ServicesSection: React.FC = () => {
                     ))}
                   </div>
 
-                  <Link
-                    href="#contact"
-                    className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-slate-800 hover:bg-secondary hover:text-white px-3 py-2 rounded-xl border border-slate-700 transition-all w-full text-center"
+                  <button
+                    onClick={() => openLeadPopup(service.title)}
+                    className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-slate-800 hover:bg-secondary hover:text-white px-3 py-2.5 rounded-xl border border-slate-700 transition-all w-full text-center cursor-pointer"
                   >
                     <span>Inquire Service</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             );

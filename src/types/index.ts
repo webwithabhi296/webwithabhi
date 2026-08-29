@@ -88,6 +88,9 @@ export interface ProjectItem {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  keyFeatures?: string[];
+  challengesSolved?: string;
+  highlights?: string[];
 }
 
 export interface ExperienceItem {

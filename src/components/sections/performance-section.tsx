@@ -1,21 +1,75 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { PERFORMANCE_METRICS } from "@/data/portfolio-data";
 import { PerformanceMetric } from "@/types";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/layout/section-heading";
+import { useLeadPopup } from "@/context/lead-popup-context";
 import {
   TrendingUp,
   ArrowRight,
   Server,
   Layers,
   FileCode2,
-  Database,
+  Gauge,
+  Search,
+  Smartphone,
+  FileSpreadsheet,
+  ShieldCheck,
 } from "lucide-react";
 
 export const PerformanceSection: React.FC = () => {
+  const { openLeadPopup } = useLeadPopup();
+
+  const PILLARS = [
+    {
+      title: "Core Web Vitals Tuning",
+      icon: Gauge,
+      description: "Sub-second LCP, minimal visual shift (CLS < 0.02), and low interaction latency.",
+    },
+    {
+      title: "Google PageSpeed 95+",
+      icon: TrendingUp,
+      description: "Comprehensive audits eliminating render-blocking CSS/JS and unused code.",
+    },
+    {
+      title: "WordPress Speed Optimization",
+      icon: Server,
+      description: "Asset debloating, WooCommerce speed tuning, and eliminating heavy page-builder overhead.",
+    },
+    {
+      title: "Cache Optimization",
+      icon: Layers,
+      description: "Redis object caching, Varnish edge proxy, PHP opcode acceleration, and browser caching headers.",
+    },
+    {
+      title: "Next-Gen Image Optimization",
+      icon: FileCode2,
+      description: "AVIF/WebP automated conversion, responsive srcset matrices, and lazy loading strategies.",
+    },
+    {
+      title: "Technical SEO & Schema",
+      icon: Search,
+      description: "JSON-LD structured data, clean DOM hierarchy, XML sitemaps, and search bot crawlability.",
+    },
+    {
+      title: "Mobile Optimization",
+      icon: Smartphone,
+      description: "Rigorous layout optimization across 320px to 768px viewports with zero horizontal overflow.",
+    },
+    {
+      title: "Landing Page & Form Validation",
+      icon: FileSpreadsheet,
+      description: "Frictionless form conversion, real-time client & server validation, and CRM webhook routing.",
+    },
+    {
+      title: "Comprehensive Performance Audits",
+      icon: ShieldCheck,
+      description: "Deep dive profiling of database slow queries, server response TTFB, and network waterfalls.",
+    },
+  ];
+
   return (
     <section
       id="performance"
@@ -27,9 +81,9 @@ export const PerformanceSection: React.FC = () => {
 
       <Container>
         <SectionHeading
-          badge="Core Web Vitals &amp; Speed Engineering"
-          title="Website Performance Optimization"
-          subtitle="Measurable speed improvements that elevate user experience, reduce bounce rates, and guarantee 95+ Google PageSpeed and Core Web Vitals scores."
+          badge="Speed Engineering &amp; SEO"
+          title="Website Performance &amp; SEO Optimization"
+          subtitle="Measurable Core Web Vitals, 95+ Google PageSpeed guarantees, technical SEO, and conversion optimization that eliminate bounce rates and drive revenue."
         />
 
         {/* Real Case Study Banner: Before vs After */}
@@ -44,7 +98,7 @@ export const PerformanceSection: React.FC = () => {
                 Client Platform Speed Transformation
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                By eliminating render-blocking scripts, converting heavy assets to WebP/AVIF, configuring server-side Redis object caching, and optimizing MySQL database queries, client sites experienced drastic performance gains.
+                By eliminating render-blocking scripts, converting heavy assets to WebP/AVIF, configuring server-side Redis object caching, and optimizing MySQL database queries, client sites experienced drastic performance gains and elevated search rankings.
               </p>
             </div>
 
@@ -106,7 +160,7 @@ export const PerformanceSection: React.FC = () => {
 
               <div className="pt-3 border-t border-slate-800/80 text-[11px] text-slate-300">
                 <span className="font-semibold text-sky-400 block mb-1">
-                  How it&apos;s optimized:
+                  Optimization technique:
                 </span>
                 <span className="text-slate-400 leading-snug block">
                   {item.optimizationTechnique}
@@ -116,54 +170,31 @@ export const PerformanceSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Optimization Pillars */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-secondary shrink-0 mt-0.5">
-              <FileCode2 className="w-4 h-4" />
-            </div>
-            <div>
-              <h5 className="text-xs font-bold text-white">Asset Minification</h5>
-              <p className="text-[11px] text-slate-400 leading-snug mt-0.5">
-                Critical CSS inlining, JS bundle debloating, and script deferral.
-              </p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-secondary shrink-0 mt-0.5">
-              <Server className="w-4 h-4" />
-            </div>
-            <div>
-              <h5 className="text-xs font-bold text-white">Advanced Caching</h5>
-              <p className="text-[11px] text-slate-400 leading-snug mt-0.5">
-                Redis object cache, opcode caching, and CDN edge distribution.
-              </p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-secondary shrink-0 mt-0.5">
-              <Layers className="w-4 h-4" />
-            </div>
-            <div>
-              <h5 className="text-xs font-bold text-white">Image Conversion</h5>
-              <p className="text-[11px] text-slate-400 leading-snug mt-0.5">
-                Next-gen WebP/AVIF formats with explicit responsive dimensions.
-              </p>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-secondary shrink-0 mt-0.5">
-              <Database className="w-4 h-4" />
-            </div>
-            <div>
-              <h5 className="text-xs font-bold text-white">Database Indexing</h5>
-              <p className="text-[11px] text-slate-400 leading-snug mt-0.5">
-                MySQL query profiling, transient cleanup, and table optimization.
-              </p>
-            </div>
+        {/* Optimization Pillars Grid Covering All User Requirements */}
+        <div className="mt-10">
+          <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
+            Specialized Performance &amp; SEO Competencies
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {PILLARS.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-start gap-3 hover:border-slate-700 transition-colors"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-bold text-white">{pillar.title}</h5>
+                    <p className="text-[11px] text-slate-400 leading-snug mt-0.5">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -171,19 +202,19 @@ export const PerformanceSection: React.FC = () => {
         <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-primary/20 via-slate-900 to-secondary/20 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <h4 className="text-base font-bold text-white">
-              Is your website running slow or failing Core Web Vitals?
+              Is your website running slow or failing Google Core Web Vitals?
             </h4>
             <p className="text-xs text-slate-300 mt-1">
-              Get a comprehensive speed and performance audit for your WordPress or Next.js website.
+              Get an actionable speed, PageSpeed 95+, and technical SEO audit directly from Abhishek.
             </p>
           </div>
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-secondary text-white text-xs font-bold shadow-md shadow-secondary/20 hover:bg-orange-600 transition-all shrink-0"
+          <button
+            onClick={() => openLeadPopup("Website Speed & Core Web Vitals Audit")}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-secondary text-white text-xs font-bold shadow-md shadow-secondary/20 hover:bg-orange-600 transition-all shrink-0 cursor-pointer"
           >
             <span>Request Speed Audit</span>
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </button>
         </div>
       </Container>
     </section>

@@ -73,6 +73,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { LeadPopupProvider } from "@/context/lead-popup-context";
+import { LeadPopup } from "@/components/modal/lead-popup";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -84,7 +87,10 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-secondary selection:text-white font-sans">
-        {children}
+        <LeadPopupProvider>
+          {children}
+          <LeadPopup />
+        </LeadPopupProvider>
       </body>
     </html>
   );

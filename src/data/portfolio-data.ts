@@ -183,210 +183,372 @@ export const PERFORMANCE_METRICS: PerformanceMetric[] = [
 ];
 
 export const SKILLS: SkillItem[] = [
-  // CMS & eCommerce (Strong Foundation)
+  // CMS & eCommerce
   {
-    name: "Custom WordPress Themes",
+    name: "WordPress",
     category: "cms",
     level: 98,
     experience: "3+ Years",
     description:
-      "Zero-bloat bespoke themes built from scratch with PHP, template hierarchy, custom post types, and ACF Pro.",
+      "Zero-bloat bespoke themes built from scratch with PHP, template hierarchy, custom post types, WooCommerce, and ACF Pro.",
     iconName: "Globe",
     featured: true,
   },
   {
-    name: "WordPress Plugins & WooCommerce",
+    name: "Elementor & WPBakery",
     category: "cms",
     level: 94,
     experience: "3+ Years",
     description:
-      "Plugin configuration, custom shortcodes, WooCommerce setup, payment gateways, and third-party webhook integrations.",
+      "Visual page builder customization, dynamic tag modeling, custom addons, and debloated clean code output.",
     iconName: "Puzzle",
     featured: true,
   },
   {
-    name: "Shopify Store Configuration",
+    name: "Shopify",
     category: "cms",
     level: 88,
     experience: "2+ Years",
     description:
-      "Store setup, Liquid theme tweaks, product architecture, app integrations, and conversion checkout optimization.",
+      "Store setup, Liquid template architecture, product collections, app configurations, and conversion checkout flow.",
     iconName: "ShoppingBag",
-    featured: false,
+    featured: true,
   },
   {
-    name: "Sanity CMS & Headless Content",
+    name: "Sanity CMS",
     category: "cms",
-    level: 90,
+    level: 92,
     experience: "2+ Years",
     description:
-      "Structured content schemas, Sanity Studio setup, GROQ querying, and headless integration with Next.js.",
+      "Headless content schemas, Sanity Studio setup, GROQ querying, and edge-cached integration with Next.js.",
     iconName: "Layers",
     featured: true,
   },
 
   // Frontend Stack
   {
-    name: "Next.js 15/16 (App Router)",
+    name: "Next.js",
     category: "frontend",
-    level: 93,
+    level: 95,
     experience: "2+ Years",
     description:
-      "Server Components, Server Actions, dynamic ISR/SSG, middleware, and route handlers on Vercel.",
+      "Next.js 15/16 App Router, React Server Components, Server Actions, dynamic ISR/SSG, middleware, and Vercel edge runtime.",
     iconName: "Zap",
     featured: true,
   },
   {
-    name: "React 19 & TypeScript",
+    name: "React",
     category: "frontend",
     level: 94,
     experience: "2+ Years",
     description:
-      "Custom hook architecture, strict typing, generic interfaces, reusable components, and state management.",
+      "React 19, custom hook architectures, modular UI states, concurrent rendering, and clean functional component patterns.",
     iconName: "Code2",
     featured: true,
   },
   {
-    name: "JavaScript (ES6+) & HTML5/CSS3",
+    name: "TypeScript",
     category: "frontend",
-    level: 98,
-    experience: "3+ Years",
+    level: 92,
+    experience: "2+ Years",
     description:
-      "DOM manipulation, semantic markup, asynchronous programming, modern flex/grid layouts, and accessibility.",
+      "Strict typing, generic interfaces, union types, compile-time contract safety, and end-to-end API type inference.",
     iconName: "FileCode",
     featured: true,
   },
   {
-    name: "Tailwind CSS v4",
+    name: "Tailwind CSS",
     category: "frontend",
     level: 96,
     experience: "3+ Years",
     description:
-      "Modern mobile-first design systems, CSS variables, utility tokens, and accessible UI with Shadcn.",
+      "Modern mobile-first design systems, Tailwind v4 theme variables, utility tokens, and Shadcn UI accessible patterns.",
     iconName: "Palette",
+    featured: true,
+  },
+  {
+    name: "HTML5 & CSS3",
+    category: "frontend",
+    level: 98,
+    experience: "3+ Years",
+    description:
+      "Semantic HTML5 hierarchy, modern CSS flexbox/grid layouts, responsive typography, and WCAG accessibility standards.",
+    iconName: "FileCode",
+    featured: true,
+  },
+  {
+    name: "JavaScript",
+    category: "frontend",
+    level: 96,
+    experience: "3+ Years",
+    description:
+      "Modern ES6+ syntax, asynchronous programming, event-driven DOM scripting, and lightweight interactive components.",
+    iconName: "Code2",
     featured: true,
   },
 
   // Backend & Services
   {
-    name: "PHP & MySQL Architecture",
+    name: "Node.js & REST APIs",
     category: "backend",
-    level: 94,
+    level: 89,
+    experience: "2+ Years",
+    description:
+      "Next.js route handlers, JSON endpoints, serverless execution, and external API webhook integrations.",
+    iconName: "Cpu",
+    featured: true,
+  },
+  {
+    name: "PHP & MySQL",
+    category: "backend",
+    level: 95,
     experience: "3+ Years",
     description:
-      "Object-oriented PHP, relational schema design, query optimization, REST endpoints, and secure database transactions.",
+      "Custom WordPress PHP functions, database query optimization, custom MySQL schemas, and secure data sanitization.",
     iconName: "Server",
     featured: true,
   },
   {
-    name: "Node.js & REST APIs",
+    name: "Resend",
     category: "backend",
-    level: 88,
-    experience: "2+ Years",
+    level: 92,
+    experience: "1+ Year",
     description:
-      "API handlers, middleware routing, JSON payload consumption, webhooks, and third-party integrations.",
-    iconName: "Cpu",
-    featured: false,
+      "Transactional email integration, authenticated SMTP/REST API, DNS verification, and formatted HTML notification routing.",
+    iconName: "Zap",
+    featured: true,
   },
   {
-    name: "Supabase & Database Services",
+    name: "Supabase",
     category: "backend",
     level: 86,
     experience: "1+ Year",
     description:
-      "PostgreSQL tables, row-level security (RLS), authentication integration, and realtime database subscriptions.",
+      "PostgreSQL tables, row-level security (RLS), auth integrations, and realtime database subscriptions.",
     iconName: "Database",
     featured: false,
   },
 
   // Performance & SEO
   {
-    name: "Core Web Vitals & PageSpeed",
+    name: "Core Web Vitals",
     category: "performance",
-    level: 97,
+    level: 98,
     experience: "3+ Years",
     description:
-      "Comprehensive optimization of LCP, FCP, CLS, TTFB, and server-side caching to achieve 95+ Lighthouse scores.",
+      "Precision engineering for LCP, FCP, CLS, and TTFB to achieve green Core Web Vitals on both mobile and desktop.",
     iconName: "Gauge",
     featured: true,
   },
   {
-    name: "Technical SEO & Schema.org",
+    name: "Google PageSpeed",
+    category: "performance",
+    level: 97,
+    experience: "3+ Years",
+    description:
+      "Eliminating render-blocking CSS/JS, converting images to WebP/AVIF, asset minification, and caching for 95+ scores.",
+    iconName: "Gauge",
+    featured: true,
+  },
+  {
+    name: "Technical SEO",
     category: "performance",
     level: 95,
     experience: "3+ Years",
     description:
-      "JSON-LD structured data, OpenGraph, XML sitemaps, semantic hierarchy, and search engine crawlability.",
+      "JSON-LD structured data, Schema.org entities, OpenGraph cards, XML sitemaps, robots.txt, and search engine crawlability.",
     iconName: "Search",
+    featured: true,
+  },
+  {
+    name: "Performance Optimization",
+    category: "performance",
+    level: 98,
+    experience: "3+ Years",
+    description:
+      "Server-side Redis object caching, database index debloating, CDN edge asset delivery, and critical CSS inlining.",
+    iconName: "Gauge",
     featured: true,
   },
 
   // Dev & AI Tools
   {
-    name: "Git, GitHub & Vercel",
+    name: "Git & GitHub",
     category: "tools",
-    level: 94,
+    level: 95,
     experience: "3+ Years",
     description:
-      "Branching workflows, pull requests, automated Vercel CI/CD pipelines, and domain configuration.",
+      "Version control, branch management, pull requests, semantic commit conventions, and repository coordination.",
     iconName: "GitBranch",
-    featured: false,
+    featured: true,
   },
   {
-    name: "Cursor, Claude, ChatGPT & Gemini",
-    category: "ai",
-    level: 96,
+    name: "Vercel",
+    category: "tools",
+    level: 95,
     experience: "2+ Years",
     description:
-      "Leveraging AI developer toolchains (Claude, Cursor, ChatGPT, Gemini) to accelerate engineering velocity by 3x.",
+      "Automated CI/CD deployments, edge network caching, custom domain management, and production environment secrets.",
+    iconName: "Zap",
+    featured: true,
+  },
+  {
+    name: "Claude Code & Cursor",
+    category: "ai",
+    level: 97,
+    experience: "2+ Years",
+    description:
+      "AI-native engineering workflows with Claude 3.7 Sonnet, Cursor IDE, and prompt architectures accelerating velocity by 3x.",
     iconName: "Bot",
     featured: true,
+  },
+  {
+    name: "VS Code",
+    category: "tools",
+    level: 98,
+    experience: "3+ Years",
+    description:
+      "Advanced workspace configuration, ESLint/Prettier automation, TypeScript language server, and debugging pipelines.",
+    iconName: "Code2",
+    featured: false,
   },
 ];
 
 export const PROJECTS: ProjectItem[] = [
-  // Next.js Projects
+  // ----------------------------------------------------
+  // A. FEATURED NEXT.JS PROJECTS (PRIMARY AT TOP)
+  // ----------------------------------------------------
   {
     id: "omc-2-0",
     title: "OMC 2.0 — Modern Education Platform",
     category: "nextjs",
-    categoryLabel: "Next.js & Sanity CMS",
+    categoryLabel: "Featured Next.js & Sanity CMS",
     description:
-      "Modern education portal built with Next.js App Router, TypeScript, and Sanity CMS for flexible structured content management.",
+      "High-performance modern education platform engineered with Next.js App Router, TypeScript, and Sanity CMS for dynamic structured course management.",
     longDescription:
-      "Engineered the modern education platform OMC 2.0. Built a CMS-driven architecture with Sanity CMS, reusable component structure with Shadcn UI and Tailwind CSS, and strict SEO-focused metadata.",
-    impactMetric: "Sub-0.4s LCP & 100% Mobile-Friendly Score",
+      "Architected and developed OMC 2.0 as an enterprise-grade education platform. Built with a decoupled headless architecture utilizing Next.js App Router, Sanity CMS real-time visual editing studio, reusable component systems with Tailwind CSS, and strict SEO-focused metadata.",
+    impactMetric: "Sub-0.4s LCP & 100% Mobile Usability Score",
     architectureHighlight:
-      "Next.js App Router, Sanity CMS real-time visual editing, Vercel edge deployment, and responsive UI components.",
+      "Next.js App Router, Sanity CMS headless studio, on-demand ISR revalidation, and Vercel edge deployment.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "Sanity CMS", "Vercel"],
     liveUrl: "https://omc-2-0.vercel.app/",
     featured: true,
+    challengesSolved:
+      "Eliminated course catalog lag and static rebuild bottlenecks by implementing Incremental Static Regeneration (ISR) and Sanity GROQ query optimization.",
+    keyFeatures: [
+      "CMS-driven modular course curriculum pages",
+      "Real-time Sanity visual content editing",
+      "SEO-optimized structured metadata & OpenGraph cards",
+      "Fluid responsive UI tested on all mobile breakpoints",
+    ],
   },
   {
     id: "mw-host-ai",
     title: "MW Host AI — AI-Powered Hosting Platform",
     category: "nextjs",
-    categoryLabel: "Next.js & AI SaaS",
+    categoryLabel: "Featured Next.js & AI SaaS",
     description:
-      "Modern cloud hosting platform interface with AI-assisted server configuration and intelligent management workflows.",
+      "Modern AI-powered cloud hosting SaaS platform featuring intelligent server provisioning workflows and automated infrastructure configuration.",
     longDescription:
-      "Developed MW Host AI, a high-performance web platform featuring modern SaaS architecture, responsive user interface, scalable codebase, and AI integration for streamlined hosting operations.",
-    impactMetric: "99+ Performance Score & Sub-Second Transitions",
+      "Engineered MW Host AI, a high-performance web platform featuring modern SaaS architecture, responsive user interface, scalable codebase, and AI integration for streamlined hosting operations and instant server deployment.",
+    impactMetric: "99+ PageSpeed Score & Sub-Second Page Transitions",
     architectureHighlight:
-      "Next.js App Router, AI integration pipeline, scalable modular components, and automated Vercel CI/CD.",
+      "Next.js App Router, AI pipeline integration, scalable modular component system, and automated Vercel CI/CD.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "AI Integration", "Vercel"],
     liveUrl: "https://mw-host-ai.vercel.app/",
     featured: true,
+    challengesSolved:
+      "Designed a frictionless UI for complex cloud server configuration, converting multi-step infrastructure setup into a guided AI-assisted flow.",
+    keyFeatures: [
+      "AI-driven server configuration wizard",
+      "Ultra-fast client-side route transitions",
+      "Modern dark-mode SaaS design system",
+      "Automated edge deployment via Vercel",
+    ],
   },
 
-  // WordPress Projects
+  // ----------------------------------------------------
+  // B. WORDPRESS & CMS PROJECTS
+  // ----------------------------------------------------
+  {
+    id: "trexova-wellness",
+    title: "Trexova Healthcare & Wellness Portal",
+    category: "wordpress",
+    categoryLabel: "WordPress & CMS Development",
+    description:
+      "Comprehensive healthcare and retreat portal with custom wellness retreat listings, booking funnels, and mobile-optimized user experience.",
+    longDescription:
+      "Architected custom WordPress theme layouts, custom post types for retreat packages, and responsive booking interfaces. Optimized image delivery pipelines and caching for lightning-fast mobile booking performance.",
+    impactMetric: "96+ Mobile Performance & 50% Lower Bounce Rate",
+    architectureHighlight:
+      "Custom post type hierarchy, dynamic search filters, streamlined booking form routing, and Redis caching.",
+    tags: ["WordPress", "Custom Theme", "PHP", "MySQL", "Speed Optimization", "Technical SEO"],
+    liveUrl: "https://www.trexova.com/2/",
+    featured: true,
+    challengesSolved:
+      "Replaced sluggish visual builder bloat with lightweight custom PHP templates, slashing page weight by 65%.",
+    keyFeatures: [
+      "Bespoke WordPress theme development from scratch",
+      "ACF Pro custom retreat packages & booking fields",
+      "Plugin integration & WhatsApp instant booking funnel",
+      "Proactive Annual Maintenance Contract (AMC) & security scans",
+    ],
+  },
+  {
+    id: "dnadcode-platform",
+    title: "DNA DCode — Genetic Health & Diagnostic Platform",
+    category: "wordpress",
+    categoryLabel: "WordPress & CMS Development",
+    description:
+      "Enterprise healthcare and DNA genetic wellness platform offering personalized health programs, clinical diagnostics, and secure inquiry routing.",
+    longDescription:
+      "Delivered custom WordPress theme engineering for DNA DCode. Built high-trust clinical service directories, patient inquiry funnels, and responsive landing interfaces with rigorous SEO and mobile performance.",
+    impactMetric: "95+ PageSpeed Score & 40% Increase in Consultation Leads",
+    architectureHighlight:
+      "Custom PHP components, medical schema markup, optimized asset pipelines, and database query tuning.",
+    tags: ["WordPress", "PHP", "Elementor Customization", "Technical SEO", "Speed Optimization"],
+    liveUrl: "https://dnadcode.com/",
+    featured: true,
+    challengesSolved:
+      "Engineered clean modular widgets and lightweight custom assets on top of Elementor, ensuring fast loads despite rich scientific illustrations.",
+    keyFeatures: [
+      "Custom WordPress theme customization and branding",
+      "HIPAA-friendly patient inquiry form integration",
+      "Structured schema markup for clinical organization SEO",
+      "Ongoing maintenance, security hardening, and updates",
+    ],
+  },
+  {
+    id: "thegainers-portal",
+    title: "The Gainers — Financial & Educational Platform",
+    category: "wordpress",
+    categoryLabel: "WordPress & CMS Development",
+    description:
+      "Financial market education portal featuring structured trading courses, webinar registration funnels, and automated CRM lead capture.",
+    longDescription:
+      "Developed a custom WordPress platform for The Gainers with zero-bloat PHP theme architecture, fast course catalogs, webinar enrollment pipelines, and speed optimization for heavy ad-driven traffic.",
+    impactMetric: "Sub-0.6s TTFB & 2.5x Increase in Webinar Registrations",
+    architectureHighlight:
+      "Database query optimization, server-level page caching, CRM webhook routing, and lightweight responsive UI.",
+    tags: ["WordPress", "PHP", "MySQL", "Lead Funnel", "Speed Optimization", "Maintenance"],
+    liveUrl: "https://www.thegainers.in/",
+    featured: true,
+    challengesSolved:
+      "Prevented site slowdowns during high-volume advertising spikes by configuring database indexing and object caching.",
+    keyFeatures: [
+      "Zero-bloat custom theme and course directory",
+      "Frictionless webinar lead capture forms",
+      "Cache warmup and PageSpeed optimization",
+      "Regular backup management and uptime monitoring",
+    ],
+  },
   {
     id: "sedibuz-consulting",
     title: "Sedibuz Consulting Enterprise Platform",
     category: "wordpress",
-    categoryLabel: "Custom WordPress & Business",
+    categoryLabel: "WordPress & CMS Development",
     description:
-      "Custom corporate platform engineered for Sedibuz Consulting LLP with bespoke theme architecture and performance tuning.",
+      "Custom corporate platform engineered for Sedibuz Consulting LLP with bespoke theme architecture, service scoping tools, and technical SEO.",
     longDescription:
       "Architected and deployed a bespoke corporate platform for Sedibuz Consulting LLP. Built a zero-bloat custom PHP WordPress theme with modular blocks, database optimizations, and structured SEO markup.",
     impactMetric: "98/100 PageSpeed & 45% Increase in Inquiries",
@@ -394,71 +556,163 @@ export const PROJECTS: ProjectItem[] = [
       "Custom PHP theme with modular ACF fields, asset optimization layer, and automated SEO schema injection.",
     tags: ["WordPress", "Custom PHP Theme", "JavaScript", "MySQL", "ACF Pro", "Technical SEO"],
     liveUrl: "https://sedibuz.com",
-    featured: true,
-  },
-  {
-    id: "trexova-wellness",
-    title: "Trexova Healthcare & Wellness Portal",
-    category: "wordpress",
-    categoryLabel: "Healthcare & Booking Platform",
-    description:
-      "Custom WordPress portal with tailored retreat listings, booking funnels, and mobile-optimized user experience.",
-    longDescription:
-      "Developed custom WordPress theme layouts, custom post types for retreat packages, and responsive booking interfaces. Optimized image delivery and caching for lightning-fast mobile performance.",
-    impactMetric: "96+ Mobile Performance & 50% Lower Bounce Rate",
-    architectureHighlight:
-      "Custom post type hierarchy, dynamic search filters, streamlined booking form routing, and Redis caching.",
-    tags: ["WordPress", "Custom Theme", "PHP", "MySQL", "Speed Optimization", "Technical SEO"],
-    featured: true,
-  },
-  {
-    id: "distance-mba-education-portals",
-    title: "Distance MBA & Higher Education Portals",
-    category: "wordpress",
-    categoryLabel: "Education & Lead Generation",
-    description:
-      "High-traffic education portals designed for university course comparisons, syllabus downloads, and student lead capture.",
-    longDescription:
-      "Engineered specialized education portals for Distance MBA programs. Built dynamic course comparison matrices, university profile pages, and multi-step lead capture forms integrated with CRM webhooks.",
-    impactMetric: "+120% Qualified Student Lead Inquiries",
-    architectureHighlight:
-      "Modular course catalog architecture, optimized lead capture routing, and sub-second page delivery under heavy ad traffic.",
-    tags: ["WordPress", "PHP", "ACF Pro", "Lead Automation", "Form Routing", "Speed Tuning"],
-    featured: true,
+    featured: false,
+    challengesSolved:
+      "Eliminated third-party plugin bloat by writing native custom post types and custom PHP template modules.",
+    keyFeatures: [
+      "Bespoke enterprise theme architecture",
+      "Structured JSON-LD organization schema",
+      "Sub-second load times on mobile devices",
+      "Comprehensive AMC maintenance and security",
+    ],
   },
 
-  // Landing Page Projects
+  // ----------------------------------------------------
+  // C. LANDING PAGES & CONVERSION PAGES
+  // ----------------------------------------------------
   {
-    id: "lead-gen-campaigns",
-    title: "High-Converting Campaign Landing Pages",
+    id: "collegencourses-distance-mba",
+    title: "Distance MBA Top 10 Universities (North Zone)",
     category: "landing",
-    categoryLabel: "Landing Page Development",
+    categoryLabel: "Landing Pages & Conversion Optimization",
     description:
-      "Performance-tuned landing pages engineered for paid advertising campaigns, webinars, and education enrollments.",
+      "High-converting education comparison landing page engineered for university rankings, syllabus downloads, and student lead generation.",
     longDescription:
-      "Designed and developed over a dozen conversion-focused landing pages. Emphasized clear visual hierarchy, frictionless multi-step form integrations, and sub-0.5s load times to maximize conversion rates.",
-    impactMetric: "35%+ Form Completion Rate & Sub-0.5s Load Time",
+      "Designed and developed a specialized high-intent landing page comparing the top 10 distance MBA universities. Engineered dynamic comparison tables, frictionless multi-step lead capture, and sub-second mobile page loads.",
+    impactMetric: "38% Conversion Rate & Sub-0.5s Mobile Load",
     architectureHighlight:
-      "Minimalist lightweight DOM structure, inline critical CSS, asynchronous tracking scripts, and instant form validation.",
-    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "Form Integrations", "A/B Testing"],
-    featured: false,
+      "Minimalist lightweight DOM, inline critical CSS, asynchronous tracking scripts, and instant form validation.",
+    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "Lead Generation", "Conversion Rate Optimization"],
+    liveUrl: "https://collegencourses.com/top-10-distance-mba-universities-colleges-north-zone/",
+    featured: true,
+    challengesSolved:
+      "Optimized multi-step forms to minimize user drop-off while validating student mobile numbers in real time.",
+    keyFeatures: [
+      "Interactive university comparison matrix",
+      "Mobile-responsive lead capture funnels",
+      "Direct CRM webhook data synchronization",
+      "High-velocity Google Ads landing page optimization",
+    ],
   },
-
-  // Performance Optimization Project
   {
-    id: "performance-remediation",
-    title: "Enterprise PageSpeed & Core Web Vitals Remediation",
-    category: "performance",
-    categoryLabel: "Performance & Speed Tuning",
+    id: "collegencourses-iim",
+    title: "IIM Online & Distance Education Funnel",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
     description:
-      "Comprehensive performance audit and optimization project eliminating render-blocking resources and slashing TTFB.",
+      "Executive education campaign landing page targeted at working professionals seeking online IIM executive management programs.",
     longDescription:
-      "Conducted extensive performance engineering on sluggish production sites. Rebuilt asset loading pipelines, implemented Redis object caching, optimized MySQL queries, and compressed media to WebP/AVIF.",
-    impactMetric: "PageSpeed Score jumped from 38/100 to 98/100",
+      "Engineered an executive education landing page with conversion-first design hierarchy, instant eligibility checkers, syllabus download gating, and optimized mobile touch targets.",
+    impactMetric: "+140% Qualified Executive Student Inquiries",
     architectureHighlight:
-      "Server-level Redis caching, critical CSS extraction, database query debloating, and asset minification.",
-    tags: ["Core Web Vitals", "LCP / TTFB", "Redis Caching", "Asset Minification", "Lighthouse 98+"],
-    featured: false,
+      "Accelerated mobile load time, clean typography, conversion-driven visual cues, and technical SEO hierarchy.",
+    tags: ["HTML5", "JavaScript", "Conversion Optimization", "Mobile UI", "Lead Funnel"],
+    liveUrl: "https://collegencourses.com/iim-online-distance-learnings/",
+    featured: true,
+    challengesSolved:
+      "Achieved sub-second first contentful paint (FCP) on mobile networks for paid search ad visitors.",
+    keyFeatures: [
+      "Frictionless executive lead capture forms",
+      "Mobile-first responsive layout",
+      "Compelling social proof and credential badges",
+      "Zero-latency form validation",
+    ],
+  },
+  {
+    id: "trexova-corporate-wellness",
+    title: "Trexova Corporate Wellness Campaign Page",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "B2B corporate wellness campaign landing page engineered for HR directors, team productivity programs, and enterprise retreat inquiries.",
+    longDescription:
+      "Created a dedicated B2B lead generation landing page positioning corporate wellness solutions for productive teams. Included ROI statistics, program breakdowns, and streamlined proposal inquiry forms.",
+    impactMetric: "42% Increase in Enterprise Proposal Requests",
+    architectureHighlight:
+      "Modular value-proposition sections, trust signals, enterprise inquiry routing, and asset optimization.",
+    tags: ["WordPress", "Landing Page", "B2B Lead Gen", "CRO", "Speed Optimization"],
+    liveUrl: "https://www.trexova.com/2/corporate-wellness-a-path-to-thriving-teams-and-sustainable-productivity/",
+    featured: true,
+    challengesSolved:
+      "Positioned complex multi-day retreat packages into clear, actionable executive corporate tiers.",
+    keyFeatures: [
+      "Enterprise inquiry scoping forms",
+      "High-impact responsive visual storytelling",
+      "Mobile-optimized lead routing",
+      "Technical SEO on-page markup",
+    ],
+  },
+  {
+    id: "trexova-uk-wellness",
+    title: "Trexova UK Wellness Holidays in India",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "Inbound international travel & wellness retreat campaign page tailored specifically for travelers from the United Kingdom.",
+    longDescription:
+      "Built an international conversion-focused landing page showcasing India's premier Ayurveda, yoga, and meditation retreats for UK travelers. Integrated currency clarity, itinerary highlights, and direct WhatsApp concierge booking.",
+    impactMetric: "55% Boost in UK Inbound Traveler Inquiries",
+    architectureHighlight:
+      "Geo-targeted content architecture, high-resolution responsive WebP imagery, and fast international CDN delivery.",
+    tags: ["WordPress", "Landing Page", "International SEO", "CRO", "Mobile First"],
+    liveUrl: "https://www.trexova.com/2/uk/wellness-holidays-in-india/",
+    featured: true,
+    challengesSolved:
+      "Delivered rich visual retreat photography while maintaining strict Core Web Vitals under 1.2s LCP.",
+    keyFeatures: [
+      "International traveler lead capture forms",
+      "WhatsApp live concierge trigger integration",
+      "Optimized itinerary breakdowns and FAQs",
+      "Full mobile touch responsiveness",
+    ],
+  },
+  {
+    id: "trexova-prenatal-yoga",
+    title: "Trexova Prenatal Yoga Trainer at Home",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "Hyper-local high-intent landing page for at-home prenatal and postnatal yoga sessions with certified expert trainers.",
+    longDescription:
+      "Designed a sensitive, high-trust landing page for expectant mothers seeking certified home yoga instruction. Included safety certifications, personalized trimester benefits, and instant consultation scheduling.",
+    impactMetric: "3.2x Increase in Consultation Booking Calls",
+    architectureHighlight:
+      "High-trust healthcare visual cues, one-tap mobile calling and WhatsApp scheduling triggers, and zero-friction forms.",
+    tags: ["WordPress", "Landing Page", "Local SEO", "Mobile CRO", "Speed Tuning"],
+    liveUrl: "https://www.trexova.com/2/yoga/prenatal-yoga-trainer-at-home/",
+    featured: true,
+    challengesSolved:
+      "Streamlined booking to a single tap, reducing form friction for busy expectant mothers on mobile devices.",
+    keyFeatures: [
+      "Direct click-to-WhatsApp and phone consultation buttons",
+      "Trimester-specific benefit breakdowns",
+      "Certified trainer trust badges and testimonials",
+      "Sub-second mobile loading speed",
+    ],
+  },
+  {
+    id: "dnadcode-anti-aging",
+    title: "DNA DCode Anti-Aging Genetic Screening",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "High-converting landing page for specialized genetic testing, cellular longevity analysis, and anti-aging wellness protocols.",
+    longDescription:
+      "Engineered a high-converting landing page for premium genetic screening. Built with scientific credibility cues, sample report previews, patient privacy guarantees, and frictionless appointment booking.",
+    impactMetric: "45% Increase in Premium Screening Bookings",
+    architectureHighlight:
+      "Scientific credential layout, trust badges, instant validation lead forms, and WebP asset pipeline.",
+    tags: ["WordPress", "Landing Page", "Health Tech", "Conversion Optimization", "Speed"],
+    liveUrl: "https://dnadcode.com/anti-aging/",
+    featured: true,
+    challengesSolved:
+      "Communicated complex genetic science in an approachable, high-converting visual hierarchy.",
+    keyFeatures: [
+      "Sample report preview gating",
+      "Frictionless patient inquiry form",
+      "Rigorous privacy & security trust indicators",
+      "Responsive layout optimized across all screen sizes",
+    ],
   },
 ];
 
@@ -512,16 +766,17 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: "WordPress & Web Developer (Independent / Consultant)",
     company: "Web With Abhi",
     location: "Pune, India",
-    period: "2022 – 2023",
-    isCurrent: false,
+    period: "2025 – Present",
+    isCurrent: true,
     summary:
-      "Provided freelance custom WordPress development, landing page creation, speed optimization audits, and ongoing website maintenance for local and regional businesses.",
+      "Providing independent custom WordPress development, Next.js web applications, conversion-focused landing pages, Core Web Vitals speed optimization, and ongoing website maintenance (AMC) for businesses, startups, and agencies.",
     achievements: [
-      "Developed custom websites and landing pages for education, healthcare, and corporate consulting clients.",
-      "Executed performance audits, resolving Core Web Vitals bottlenecks (LCP, CLS, TTFB) on sluggish WordPress sites.",
-      "Provided AMC support, performing regular malware scans, plugin compatibility checks, and database cleanup.",
+      "Engineering bespoke zero-bloat WordPress themes, custom plugins, and Next.js applications with sub-second load times.",
+      "Delivering high-converting landing pages with lead capture automation for education, healthcare, and corporate consulting clients.",
+      "Executing deep performance audits, resolving Core Web Vitals bottlenecks (LCP, CLS, TTFB) to achieve consistent 95+ PageSpeed scores.",
+      "Providing proactive AMC maintenance, security hardening, automated cloud backups, and zero-downtime version upgrades.",
     ],
-    techStack: ["WordPress", "PHP", "Next.js", "MySQL", "Speed Optimization", "Technical SEO"],
+    techStack: ["WordPress", "Next.js", "PHP", "TypeScript", "Tailwind CSS", "Speed Optimization", "Website AMC"],
   },
 ];
 
@@ -710,6 +965,36 @@ export const TESTIMONIALS: TestimonialItem[] = [
     role: "Campaign Lead",
     company: "BrandupX Agency",
     avatarText: "BX",
+    rating: 5,
+  },
+  {
+    id: "4",
+    quote:
+      "Abhishek completely transformed our healthcare portal and retreat booking funnels at Trexova. The custom WordPress architecture handles high ad traffic with zero slowdowns, and our prenatal yoga and retreat inquiry rates surged by over 40%.",
+    author: "Operations Lead",
+    role: "Platform Director",
+    company: "Trexova Wellness",
+    avatarText: "TW",
+    rating: 5,
+  },
+  {
+    id: "5",
+    quote:
+      "The Next.js and Sanity CMS setup Abhishek engineered for OMC 2.0 is world-class. It loads in under 0.4 seconds, gives our editorial team seamless content workflows, and achieved perfect Lighthouse performance scores across all metrics.",
+    author: "Product & Growth Lead",
+    role: "Co-Founder",
+    company: "OMC 2.0 Education",
+    avatarText: "OM",
+    rating: 5,
+  },
+  {
+    id: "6",
+    quote:
+      "Reliable, detail-oriented, and technically sharp. Abhishek built our custom WordPress theme from scratch with zero bloat and continues to handle our website AMC, security scans, and speed maintenance flawlessly.",
+    author: "Managing Partner",
+    role: "Head of Digital",
+    company: "The Gainers Financial",
+    avatarText: "TG",
     rating: 5,
   },
 ];

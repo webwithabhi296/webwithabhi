@@ -57,7 +57,10 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  max-width: 100%;
+  overflow-x: clip;
   background-color: var(--background);
   color: var(--foreground);
   min-height: 100vh;

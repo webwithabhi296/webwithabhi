@@ -5,6 +5,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { STATS } from "@/data/portfolio-data";
 import { Container } from "@/components/layout/container";
+import { useLeadPopup } from "@/context/lead-popup-context";
 import {
   ArrowRight,
   CheckCircle2,
@@ -23,6 +24,7 @@ const ROLES = [
 ];
 
 export const HeroSection: React.FC = () => {
+  const { openLeadPopup } = useLeadPopup();
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -54,14 +56,14 @@ export const HeroSection: React.FC = () => {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Hero Content */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
+          <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6 max-w-full">
             {/* Status Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 backdrop-blur-md shadow-sm">
-              <span className="relative flex h-2 w-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 backdrop-blur-md shadow-sm max-w-full">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-xs font-semibold text-slate-300">
+              <span className="text-[11px] sm:text-xs font-semibold text-slate-300">
                 Available for WordPress, Next.js Projects &amp; AMC Maintenance
               </span>
             </div>
@@ -111,12 +113,12 @@ export const HeroSection: React.FC = () => {
                 <span>Speed Optimization</span>
               </Link>
 
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+              <button
+                onClick={() => openLeadPopup("Hero Section Direct Inquiry")}
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-900/60 rounded-xl transition-colors cursor-pointer"
               >
                 <span>Get In Touch</span>
-              </Link>
+              </button>
             </div>
 
             {/* Direct Contact Snippets */}
