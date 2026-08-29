@@ -93,6 +93,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: `Web With Abhi <${process.env.CONTACT_EMAIL}>`,
+        from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
         to: recipientEmail,
         subject: `[Web With Abhi] New Project Inquiry: ${selectedService} from ${name}`,
         html: emailBody,
