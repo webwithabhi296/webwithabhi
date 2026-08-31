@@ -7,8 +7,8 @@ export const contactSchema = z.object({
     .min(1, { message: "Full name is required." })
     .min(2, { message: "Name must be at least 2 characters long." })
     .max(50, { message: "Name cannot exceed 50 characters." })
-    .regex(/^[A-Za-z\s]+$/, {
-      message: "Name can only contain letters and spaces (no numbers or special characters).",
+    .regex(/^[A-Za-z\s'-]+$/, {
+      message: "Name can only contain letters, spaces, hyphens, and apostrophes.",
     }),
 
   email: z

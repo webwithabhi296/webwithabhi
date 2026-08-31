@@ -64,7 +64,7 @@ export const HeroSection: React.FC = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span className="text-[11px] sm:text-xs font-semibold text-slate-300">
-                Available for WordPress, Next.js Projects &amp; AMC Maintenance
+                Available for Full-time Roles, Freelance Projects &amp; AMC Retainers
               </span>
             </div>
 

@@ -745,6 +745,23 @@ export const EXPERIENCES: ExperienceItem[] = [
     ],
   },
   {
+    id: "freelance-foundation",
+    role: "WordPress & Web Developer (Currently Working)",
+    company: "Web With Abhi",
+    location: "Pune, India",
+    period: "2025 – Present",
+    isCurrent: true,
+    summary:
+      "Providing independent custom WordPress development, Next.js web applications, conversion-focused landing pages, Core Web Vitals speed optimization, and ongoing website maintenance (AMC) for businesses, startups, and agencies.",
+    achievements: [
+      "Engineering bespoke zero-bloat WordPress themes, custom plugins, and Next.js applications with sub-second load times.",
+      "Delivering high-converting landing pages with lead capture automation for education, healthcare, and corporate consulting clients.",
+      "Executing deep performance audits, resolving Core Web Vitals bottlenecks (LCP, CLS, TTFB) to achieve consistent 95+ PageSpeed scores.",
+      "Providing proactive AMC maintenance, security hardening, automated cloud backups, and zero-downtime version upgrades.",
+    ],
+    techStack: ["WordPress", "Next.js", "PHP", "TypeScript", "Tailwind CSS", "Speed Optimization", "Website AMC"],
+  },
+  {
     id: "brandupx",
     role: "Web Developer",
     company: "BrandupX",
@@ -760,23 +777,6 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Consistently met tight client project deadlines with clean, maintainable, and well-structured codebases.",
     ],
     techStack: ["WordPress", "HTML5", "CSS3", "JavaScript", "PHP", "Landing Pages", "SEO"],
-  },
-  {
-    id: "freelance-foundation",
-    role: "WordPress & Web Developer (Independent / Consultant)",
-    company: "Web With Abhi",
-    location: "Pune, India",
-    period: "2025 – Present",
-    isCurrent: true,
-    summary:
-      "Providing independent custom WordPress development, Next.js web applications, conversion-focused landing pages, Core Web Vitals speed optimization, and ongoing website maintenance (AMC) for businesses, startups, and agencies.",
-    achievements: [
-      "Engineering bespoke zero-bloat WordPress themes, custom plugins, and Next.js applications with sub-second load times.",
-      "Delivering high-converting landing pages with lead capture automation for education, healthcare, and corporate consulting clients.",
-      "Executing deep performance audits, resolving Core Web Vitals bottlenecks (LCP, CLS, TTFB) to achieve consistent 95+ PageSpeed scores.",
-      "Providing proactive AMC maintenance, security hardening, automated cloud backups, and zero-downtime version upgrades.",
-    ],
-    techStack: ["WordPress", "Next.js", "PHP", "TypeScript", "Tailwind CSS", "Speed Optimization", "Website AMC"],
   },
 ];
 

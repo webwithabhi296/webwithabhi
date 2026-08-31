@@ -19,9 +19,9 @@ export const FAQSection: React.FC = () => {
     <section id="faq" className="py-12 md:py-16 bg-slate-950/90 relative border-t border-slate-900">
       <Container>
         <SectionHeading
-          badge="Knowledge Base &amp; AEO Matrix"
-          title="Frequently Asked Questions"
-          subtitle="Clear answers about Abhishek Panchgalle's background, technical specializations, engineering methodology, and project engagement models."
+          badge="Frequently Asked Questions"
+          title="Questions &amp; Answers"
+          subtitle="Clear answers about Abhishek Panchgalle's experience, technical capabilities, engineering methodology, and engagement models for full-time roles and freelance projects."
         />
 
         <div className="max-w-3xl mx-auto mt-12 space-y-4">
