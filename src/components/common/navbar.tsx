@@ -124,10 +124,10 @@ export const Navbar: React.FC = () => {
             </div>
 
             <button
-              onClick={() => openLeadPopup("Navbar Get In Touch")}
+              onClick={() => openLeadPopup()}
               className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-secondary to-orange-600 rounded-full shadow-md shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
-              <span>Get In Touch</span>
+              <span>Get in Touch</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -144,36 +144,37 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 p-4 rounded-2xl bg-slate-950/95 border border-slate-800 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-col gap-1.5 pb-3 border-b border-slate-800">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 text-xs font-medium mb-1">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                Available for Full-Time &amp; Freelance
-              </div>
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
+          <div className="lg:hidden mt-3 p-4 rounded-2xl bg-slate-950/95 border border-slate-800 backdrop-blur-2xl shadow-2xl space-y-3">
+            <nav className="flex flex-col space-y-1">
+              {NAV_LINKS.map((link) => {
+                const isActive = activeSection === link.href.substring(1);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "px-4 py-2.5 rounded-xl text-xs font-semibold transition-all",
+                      isActive
+                        ? "text-white bg-slate-800"
+                        : "text-slate-300 hover:text-white hover:bg-slate-900"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </nav>
 
             <div className="pt-3 flex flex-col gap-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  openLeadPopup("Mobile Menu Drawer Inquiry");
+                  openLeadPopup();
                 }}
                 className="w-full py-2.5 px-4 text-center text-xs font-semibold text-white bg-gradient-to-r from-secondary to-orange-600 rounded-xl shadow-md cursor-pointer"
               >
-                Inquire Project / Full-Time Hire
+                Get in Touch
               </button>
               <div className="flex items-center justify-between text-xs text-slate-400 px-2 pt-1">
                 <a

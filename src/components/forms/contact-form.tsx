@@ -1,30 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactSchema, ContactFormData } from "@/lib/validation/contactSchema";
+import {
+  contactSchema,
+  ContactFormData,
+  PURPOSE_OPTIONS,
+  COUNTRY_CODES,
+} from "@/lib/validation/contactSchema";
 import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
-
-export const SERVICE_OPTIONS = [
-  "Custom WordPress Development",
-  "Next.js Web Application",
-  "Landing Page & Conversion Optimization",
-  "Website Performance & Core Web Vitals (95+)",
-  "Website Maintenance & AMC",
-  "Technical SEO & Schema Optimization",
-  "Shopify Store Setup & Optimization",
-  "Consultation / Other Inquiry",
-];
-
-export const SCOPE_OPTIONS = [
-  "New Website from Scratch",
-  "Redesign / Rebuild Existing Website",
-  "Speed & Core Web Vitals Optimization",
-  "Ongoing Monthly Maintenance (AMC)",
-  "Technical Consulting & Code Audit",
-  "Other / Custom Requirement",
-];
 
 interface ContactFormProps {
   onSuccess?: () => void;
@@ -40,23 +25,67 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
+  // Match incoming default service / purpose string if provided
+  const resolvedPurpose = React.useMemo(() => {
+    if (!defaultService) return "";
+    const matched = PURPOSE_OPTIONS.find(
+      (opt) => opt.toLowerCase() === defaultService.toLowerCase()
+    );
+    if (matched) return matched;
+    if (defaultService.toLowerCase().includes("full-time") || defaultService.toLowerCase().includes("career")) {
+      return "Full-Time Opportunity";
+    }
+    if (defaultService.toLowerCase().includes("freelance")) {
+      return "Freelance Project";
+    }
+    if (defaultService.toLowerCase().includes("wordpress")) {
+      return "WordPress Development";
+    }
+    if (defaultService.toLowerCase().includes("next")) {
+      return "Next.js Development";
+    }
+    if (defaultService.toLowerCase().includes("landing")) {
+      return "Landing Page Development";
+    }
+    if (defaultService.toLowerCase().includes("speed") || defaultService.toLowerCase().includes("optimization")) {
+      return "Website Optimization";
+    }
+    if (defaultService.toLowerCase().includes("seo")) {
+      return "SEO & Performance";
+    }
+    if (defaultService.toLowerCase().includes("maintenance") || defaultService.toLowerCase().includes("amc")) {
+      return "Website Maintenance";
+    }
+    if (defaultService.toLowerCase().includes("shopify")) {
+      return "Shopify Development";
+    }
+    return "";
+  }, [defaultService]);
+
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     mode: "onBlur",
     defaultValues: {
       name: "",
+      countryCode: "+91",
+      mobile: "",
       email: "",
-      phone: "",
-      service: defaultService || "Custom WordPress Development",
-      projectScope: "",
-      message: "",
+      purpose: resolvedPurpose || "",
+      projectDetails: "",
     },
   });
+
+  useEffect(() => {
+    if (resolvedPurpose) {
+      setValue("purpose", resolvedPurpose);
+    }
+  }, [resolvedPurpose, setValue]);
 
   const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus("idle");
@@ -78,7 +107,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         setStatusMessage(
           resData.message || "Thank you! Your message has been sent to Abhishek Panchgalle."
         );
-        reset();
+        reset({
+          name: "",
+          countryCode: "+91",
+          mobile: "",
+          email: "",
+          purpose: "",
+          projectDetails: "",
+        });
         if (onSuccess) {
           setTimeout(() => {
             onSuccess();
@@ -100,310 +136,158 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`text-left ${isModal ? "space-y-2.5" : "space-y-4"}`}
+      className="text-left space-y-3.5 w-full"
       noValidate
     >
-      {isModal ? (
-        /* ==========================================================
-           MODAL MODE: Compact, Single-Column, Placeholders Only
-           ========================================================== */
-        <>
-          {/* Name Field */}
-          <div>
-            <input
-              id="name-modal"
-              type="text"
-              aria-label="Name"
-              {...register("name")}
-              placeholder="Name"
-              disabled={isSubmitting}
-              className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm placeholder:text-slate-500 focus:outline-none transition-colors ${
-                errors.name
-                  ? "border-red-500/80 focus:border-red-500"
-                  : "border-slate-800 focus:border-secondary"
-              }`}
-            />
-            {errors.name && (
-              <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>{errors.name.message}</span>
-              </p>
-            )}
-          </div>
+      {/* 1. Name Field */}
+      <div>
+        <input
+          id={isModal ? "name-modal" : "name-section"}
+          type="text"
+          aria-label="Name"
+          placeholder="Name *"
+          {...register("name")}
+          disabled={isSubmitting}
+          className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm placeholder:text-slate-400 focus:outline-none transition-colors ${
+            errors.name
+              ? "border-red-500/80 focus:border-red-500"
+              : "border-slate-800 focus:border-secondary"
+          }`}
+        />
+        {errors.name && (
+          <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
+            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+            <span>{errors.name.message}</span>
+          </p>
+        )}
+      </div>
 
-          {/* Email Address Field */}
-          <div>
-            <input
-              id="email-modal"
-              type="email"
-              aria-label="Email Address"
-              {...register("email")}
-              placeholder="Email Address"
-              disabled={isSubmitting}
-              className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm placeholder:text-slate-500 focus:outline-none transition-colors ${
-                errors.email
-                  ? "border-red-500/80 focus:border-red-500"
-                  : "border-slate-800 focus:border-secondary"
-              }`}
-            />
-            {errors.email && (
-              <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>{errors.email.message}</span>
-              </p>
-            )}
-          </div>
-
-          {/* Phone Number Field */}
-          <div>
-            <input
-              id="phone-modal"
-              type="tel"
-              aria-label="Phone Number"
-              {...register("phone")}
-              placeholder="Phone Number"
-              disabled={isSubmitting}
-              className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm placeholder:text-slate-500 focus:outline-none transition-colors ${
-                errors.phone
-                  ? "border-red-500/80 focus:border-red-500"
-                  : "border-slate-800 focus:border-secondary"
-              }`}
-            />
-            {errors.phone && (
-              <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>{errors.phone.message}</span>
-              </p>
-            )}
-          </div>
-
-          {/* Service Required Field */}
-          <div>
+      {/* 2. Mobile Number with Country Code Selector */}
+      <div>
+        <div className="flex gap-2">
+          {/* Country Code Dropdown */}
+          <div className="w-[120px] sm:w-[130px] shrink-0">
             <select
-              id="service-modal"
-              aria-label="Service Required"
-              {...register("service")}
+              id={isModal ? "country-code-modal" : "country-code-section"}
+              aria-label="Country Code"
+              {...register("countryCode")}
               disabled={isSubmitting}
-              className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm focus:outline-none transition-colors ${
-                errors.service
-                  ? "border-red-500/80 focus:border-red-500"
-                  : "border-slate-800 focus:border-secondary"
-              }`}
+              className="w-full px-2.5 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-white text-xs sm:text-sm focus:outline-none focus:border-secondary transition-colors cursor-pointer"
             >
-              <option value="" disabled className="bg-slate-950 text-slate-500">
-                Service Required
-              </option>
-              {SERVICE_OPTIONS.map((opt) => (
-                <option key={opt} value={opt} className="bg-slate-950 text-white">
-                  {opt}
+              {COUNTRY_CODES.map((item) => (
+                <option
+                  key={item.code}
+                  value={item.code}
+                  className="bg-slate-900 text-white"
+                >
+                  {item.label}
                 </option>
               ))}
             </select>
-            {errors.service && (
-              <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>{errors.service.message}</span>
-              </p>
-            )}
           </div>
 
-          {/* Project Details (Optional) */}
-          <div>
-            <textarea
-              id="message-modal"
-              aria-label="Project Details (Optional)"
-              {...register("message")}
-              rows={3}
-              placeholder="Project Details (Optional)"
-              disabled={isSubmitting}
-              className="w-full px-3.5 py-2 rounded-xl bg-slate-950/90 border border-slate-800 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-secondary transition-colors resize-none"
-            />
-          </div>
-        </>
-      ) : (
-        /* ==========================================================
-           SECTION MODE: Comprehensive Layout with Labels & Grids
-           ========================================================== */
-        <>
-          {/* Name Field */}
-          <div>
-            <label
-              htmlFor="name-section"
-              className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5"
-            >
-              Full Name <span className="text-secondary">*</span>
-            </label>
+          {/* Phone Input */}
+          <div className="flex-1 min-w-0">
             <input
-              id="name-section"
-              type="text"
-              {...register("name")}
-              placeholder="e.g. John Doe"
+              id={isModal ? "mobile-modal" : "mobile-section"}
+              type="tel"
+              inputMode="numeric"
+              aria-label="Mobile Number"
+              placeholder="Mobile Number *"
+              {...register("mobile")}
               disabled={isSubmitting}
-              className={`w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border text-white text-sm placeholder:text-slate-500 focus:outline-none transition-colors ${
-                errors.name
+              className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm placeholder:text-slate-400 focus:outline-none transition-colors ${
+                errors.mobile
                   ? "border-red-500/80 focus:border-red-500"
                   : "border-slate-800 focus:border-secondary"
               }`}
             />
-            {errors.name && (
-              <p className="mt-1 text-xs text-red-400 flex items-center gap-1 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>{errors.name.message}</span>
-              </p>
-            )}
           </div>
+        </div>
+        {errors.mobile && (
+          <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
+            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+            <span>{errors.mobile.message}</span>
+          </p>
+        )}
+      </div>
 
-          {/* Email & Phone Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Email Field */}
-            <div>
-              <label
-                htmlFor="email-section"
-                className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5"
-              >
-                Email Address <span className="text-secondary">*</span>
-              </label>
-              <input
-                id="email-section"
-                type="email"
-                {...register("email")}
-                placeholder="e.g. john@company.com"
-                disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border text-white text-sm placeholder:text-slate-500 focus:outline-none transition-colors ${
-                  errors.email
-                    ? "border-red-500/80 focus:border-red-500"
-                    : "border-slate-800 focus:border-secondary"
-                }`}
-              />
-              {errors.email && (
-                <p className="mt-1 text-xs text-red-400 flex items-center gap-1 font-medium">
-                  <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                  <span>{errors.email.message}</span>
-                </p>
-              )}
-            </div>
+      {/* 3. Email Field (Optional) */}
+      <div>
+        <input
+          id={isModal ? "email-modal" : "email-section"}
+          type="email"
+          aria-label="Email (Optional)"
+          placeholder="Email (Optional)"
+          {...register("email")}
+          disabled={isSubmitting}
+          className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm placeholder:text-slate-400 focus:outline-none transition-colors ${
+            errors.email
+              ? "border-red-500/80 focus:border-red-500"
+              : "border-slate-800 focus:border-secondary"
+          }`}
+        />
+        {errors.email && (
+          <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
+            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+            <span>{errors.email.message}</span>
+          </p>
+        )}
+      </div>
 
-            {/* Phone Field */}
-            <div>
-              <label
-                htmlFor="phone-section"
-                className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5"
-              >
-                Phone / WhatsApp <span className="text-secondary">*</span>
-              </label>
-              <input
-                id="phone-section"
-                type="tel"
-                {...register("phone")}
-                placeholder="e.g. +91 8421903846"
-                disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border text-white text-sm placeholder:text-slate-500 focus:outline-none transition-colors ${
-                  errors.phone
-                    ? "border-red-500/80 focus:border-red-500"
-                    : "border-slate-800 focus:border-secondary"
-                }`}
-              />
-              {errors.phone && (
-                <p className="mt-1 text-xs text-red-400 flex items-center gap-1 font-medium">
-                  <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                  <span>{errors.phone.message}</span>
-                </p>
-              )}
-            </div>
-          </div>
+      {/* 4. Purpose Dropdown (Required) */}
+      <div>
+        <select
+          id={isModal ? "purpose-modal" : "purpose-section"}
+          aria-label="How can I help you?"
+          {...register("purpose")}
+          disabled={isSubmitting}
+          className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border text-white text-sm focus:outline-none transition-colors cursor-pointer ${
+            errors.purpose
+              ? "border-red-500/80 focus:border-red-500"
+              : "border-slate-800 focus:border-secondary"
+          }`}
+        >
+          <option value="" disabled className="bg-slate-950 text-slate-400">
+            How can I help you? *
+          </option>
+          {PURPOSE_OPTIONS.map((opt) => (
+            <option key={opt} value={opt} className="bg-slate-900 text-white">
+              {opt}
+            </option>
+          ))}
+        </select>
+        {errors.purpose && (
+          <p className="mt-1 text-[11px] text-red-400 flex items-center gap-1 font-medium">
+            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+            <span>{errors.purpose.message}</span>
+          </p>
+        )}
+      </div>
 
-          {/* Service & Scope Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Service Field (Required) */}
-            <div>
-              <label
-                htmlFor="service-section"
-                className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5"
-              >
-                Service Required <span className="text-secondary">*</span>
-              </label>
-              <select
-                id="service-section"
-                {...register("service")}
-                disabled={isSubmitting}
-                className={`w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border text-white text-sm focus:outline-none transition-colors ${
-                  errors.service
-                    ? "border-red-500/80 focus:border-red-500"
-                    : "border-slate-800 focus:border-secondary"
-                }`}
-              >
-                {SERVICE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt} className="bg-slate-950 text-white">
-                    {opt}
-                  </option>
-                ))}
-              </select>
-              {errors.service && (
-                <p className="mt-1 text-xs text-red-400 flex items-center gap-1 font-medium">
-                  <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                  <span>{errors.service.message}</span>
-                </p>
-              )}
-            </div>
-
-            {/* Project Scope (Optional) */}
-            <div>
-              <label
-                htmlFor="scope-section"
-                className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5"
-              >
-                Project Scope{" "}
-                <span className="text-slate-500 text-[11px] lowercase">(optional)</span>
-              </label>
-              <select
-                id="scope-section"
-                {...register("projectScope")}
-                disabled={isSubmitting}
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white text-sm focus:outline-none focus:border-secondary transition-colors"
-              >
-                <option value="" className="bg-slate-950 text-slate-400">
-                  Select project scope...
-                </option>
-                {SCOPE_OPTIONS.map((scope) => (
-                  <option key={scope} value={scope} className="bg-slate-950 text-white">
-                    {scope}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Message Field (Optional) */}
-          <div>
-            <label
-              htmlFor="message-section"
-              className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5"
-            >
-              Project Details / Message{" "}
-              <span className="text-slate-500 text-[11px] lowercase">(optional)</span>
-            </label>
-            <textarea
-              id="message-section"
-              {...register("message")}
-              rows={4}
-              placeholder="Briefly describe your requirements, timeline, or objectives..."
-              disabled={isSubmitting}
-              className="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-secondary transition-colors resize-none"
-            />
-          </div>
-        </>
-      )}
+      {/* 5. Project Details (Optional) */}
+      <div>
+        <textarea
+          id={isModal ? "project-details-modal" : "project-details-section"}
+          aria-label="Project Details (Optional)"
+          rows={3}
+          placeholder="Project Details (Optional)"
+          {...register("projectDetails")}
+          disabled={isSubmitting}
+          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-white text-sm placeholder:text-slate-400 focus:outline-none focus:border-secondary transition-colors resize-none"
+        />
+      </div>
 
       {/* Status Messages */}
       {submitStatus === "success" && (
-        <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/60 text-emerald-400 text-xs flex items-start gap-2.5">
+        <div className="p-3 rounded-xl bg-emerald-950/50 border border-emerald-800/70 text-emerald-300 text-xs flex items-start gap-2.5 animate-in fade-in">
           <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400 mt-0.5" />
           <span>{statusMessage}</span>
         </div>
       )}
 
       {submitStatus === "error" && (
-        <div className="p-3 rounded-xl bg-red-950/40 border border-red-800/60 text-red-400 text-xs flex items-start gap-2.5">
+        <div className="p-3 rounded-xl bg-red-950/50 border border-red-800/70 text-red-300 text-xs flex items-start gap-2.5 animate-in fade-in">
           <AlertCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
           <span>{statusMessage}</span>
         </div>
@@ -413,9 +297,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full font-bold text-white bg-gradient-to-r from-secondary via-orange-500 to-amber-500 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2 cursor-pointer ${
-          isModal ? "py-2.5 px-4 rounded-xl text-sm" : "py-3 px-6 rounded-xl text-sm"
-        }`}
+        className="w-full py-3 px-6 rounded-xl font-bold text-white text-sm bg-gradient-to-r from-secondary via-orange-500 to-amber-500 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2 cursor-pointer"
       >
         {isSubmitting ? (
           <>
@@ -425,13 +307,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         ) : (
           <>
             <Send className="w-4 h-4" />
-            <span>{isModal ? "Send Message" : "Send Project Inquiry"}</span>
+            <span>Get in Touch</span>
           </>
         )}
       </button>
 
-      <p className="text-[11px] text-slate-500 text-center">
-        Guaranteed response within 24 hours. Direct communication with Abhishek Panchgalle.
+      <p className="text-[11px] text-slate-400 text-center">
+        Guaranteed response within 24 hours. Direct communication with Abhishek.
       </p>
     </form>
   );

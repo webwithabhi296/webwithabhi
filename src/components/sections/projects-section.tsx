@@ -18,6 +18,7 @@ import {
   AlertTriangle,
   ArrowRight,
 } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const PROJECT_CATEGORIES: { key: ProjectCategory; label: string }[] = [
   { key: "all", label: "All Projects" },
@@ -69,7 +70,7 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <FadeIn variant="fadeUp" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project: ProjectItem) => (
             <div
               key={project.id}
@@ -185,7 +186,7 @@ export const ProjectsSection: React.FC = () => {
                   )}
 
                   <button
-                    onClick={() => openLeadPopup(`Inquiry about ${project.title}`)}
+                    onClick={() => openLeadPopup(project.title)}
                     className="text-[11px] font-medium text-slate-400 hover:text-white transition-colors cursor-pointer"
                   >
                     Start Similar Project &rarr;
@@ -194,10 +195,10 @@ export const ProjectsSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </FadeIn>
 
         {/* Global Project CTA Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-primary/20 to-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
+        <FadeIn variant="slideUp" delay={0.2} className="mt-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-primary/20 to-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
             <h4 className="text-lg sm:text-xl font-bold text-white">
               Have a Custom WordPress, Next.js, or Landing Page Project in Mind?
@@ -207,13 +208,13 @@ export const ProjectsSection: React.FC = () => {
             </p>
           </div>
           <button
-            onClick={() => openLeadPopup("Custom Project Consultation")}
+            onClick={() => openLeadPopup("Freelance Project")}
             className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-secondary to-orange-600 rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shrink-0"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-4 h-4" />
           </button>
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );

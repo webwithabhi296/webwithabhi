@@ -15,6 +15,7 @@ import {
   Check,
   ShieldCheck,
 } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export const ContactSection: React.FC = () => {
   const [copiedField, setCopiedField] = useState<string | null>(null);
@@ -57,7 +58,7 @@ export const ContactSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 items-start">
           {/* Left Column: Direct Contact & Availability Cards */}
-          <div className="lg:col-span-5 space-y-5">
+          <FadeIn variant="fadeUp" className="lg:col-span-5 space-y-5">
             {/* Quick Connect Card */}
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-6 shadow-xl shadow-black/20">
               <h3 className="text-xl font-bold text-white">
@@ -180,22 +181,19 @@ export const ContactSection: React.FC = () => {
                 Direct technical review and transparent scoping for every project inquiry.
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Column: Shared Contact Inquiry Form */}
-          <div className="lg:col-span-7">
+          <FadeIn variant="fadeUp" delay={0.15} className="lg:col-span-7">
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 shadow-xl shadow-black/20">
-              <h3 className="text-xl font-bold text-white mb-1">
-                Send a Project Inquiry
+              <h3 className="text-xl font-bold text-white mb-4 pb-3 border-b border-slate-800">
+                Get in Touch
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400 mb-6">
-                Fill out the form below to receive a scoping timeline and estimate directly from Abhishek.
-              </p>
 
               {/* Reusable Contact Form Component */}
               <ContactForm isModal={false} />
             </div>
-          </div>
+          </FadeIn>
         </div>
       </Container>
     </section>

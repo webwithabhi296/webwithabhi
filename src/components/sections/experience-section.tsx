@@ -15,6 +15,7 @@ import {
   ArrowRight,
   ExternalLink,
 } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export const ExperienceSection: React.FC = () => {
   const { openLeadPopup } = useLeadPopup();
@@ -35,7 +36,7 @@ export const ExperienceSection: React.FC = () => {
           {/* Vertical Timeline Line */}
           <div className="absolute left-4 sm:left-6 top-3 bottom-6 w-0.5 bg-gradient-to-b from-secondary via-slate-800 to-slate-900" />
 
-          <div className="space-y-8">
+          <FadeIn variant="fadeUp" className="space-y-8">
             {EXPERIENCES.map((exp: ExperienceItem) => (
               <div key={exp.id} className="relative pl-10 sm:pl-14">
                 {/* Timeline Bullet Node */}
@@ -73,7 +74,7 @@ export const ExperienceSection: React.FC = () => {
                     <div className="flex flex-col sm:items-end text-xs text-slate-400">
                       <div className="text-sm font-semibold text-secondary flex items-center gap-1.5">
                         <Building className="w-3.5 h-3.5" />
-                        {exp.companyUrl ? (
+                        {exp.companyUrl && !exp.company.toLowerCase().includes("magicworks") ? (
                           <a
                             href={exp.companyUrl}
                             target="_blank"
@@ -134,10 +135,10 @@ export const ExperienceSection: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </FadeIn>
 
           {/* Recruiter & Client Dual Action Banner */}
-          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-primary/20 to-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-xl">
+          <FadeIn variant="slideUp" delay={0.2} className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-primary/20 to-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-xl">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary shrink-0">
                 <Briefcase className="w-5 h-5" />
@@ -153,13 +154,13 @@ export const ExperienceSection: React.FC = () => {
             </div>
 
             <button
-              onClick={() => openLeadPopup("Experience Career Discussion")}
+              onClick={() => openLeadPopup("Full-Time Opportunity")}
               className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-secondary to-orange-600 rounded-xl shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shrink-0"
             >
               <span>Get in Touch</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
-          </div>
+          </FadeIn>
         </div>
       </Container>
     </section>

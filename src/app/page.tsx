@@ -2,6 +2,7 @@ import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import {
   HeroSection,
+  TrustSection,
   AboutSection,
   SkillsSection,
   ProjectsSection,
@@ -23,6 +24,7 @@ export default function HomePage() {
       {/* Main Content Sections */}
       <main className="flex-1 w-full flex flex-col">
         <HeroSection />
+        <TrustSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />

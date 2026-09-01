@@ -5,10 +5,12 @@ import { FAQS } from "@/data/portfolio-data";
 import { FAQItem } from "@/types";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/layout/section-heading";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
+import { useLeadPopup } from "@/context/lead-popup-context";
 import { cn } from "@/lib/utils";
 
 export const FAQSection: React.FC = () => {
+  const { openLeadPopup } = useLeadPopup();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -68,6 +70,20 @@ export const FAQSection: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Let's Talk CTA */}
+        <div className="mt-10 text-center flex flex-col items-center justify-center">
+          <p className="text-xs text-slate-400 mb-3">
+            Have an unlisted question about a role or upcoming project?
+          </p>
+          <button
+            onClick={() => openLeadPopup("Other")}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-xs sm:text-sm font-semibold text-white transition-all cursor-pointer shadow-md"
+          >
+            <span>Let&apos;s Talk</span>
+            <ArrowRight className="w-3.5 h-3.5 text-secondary" />
+          </button>
         </div>
       </Container>
     </section>

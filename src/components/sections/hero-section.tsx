@@ -14,6 +14,7 @@ import {
   Gauge,
   Globe,
 } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const ROLES = [
   "WordPress Developer",
@@ -56,7 +57,7 @@ export const HeroSection: React.FC = () => {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Hero Content */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6 max-w-full">
+          <FadeIn variant="fadeUp" className="lg:col-span-7 flex flex-col items-start text-left space-y-6 max-w-full">
             {/* Status Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 backdrop-blur-md shadow-sm max-w-full">
               <span className="relative flex h-2 w-2 shrink-0">
@@ -97,28 +98,30 @@ export const HeroSection: React.FC = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              {/* Primary CTA: Hire Me (opens popup) */}
+              <button
+                onClick={() => openLeadPopup("Full-Time Opportunity")}
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-secondary via-orange-500 to-amber-500 rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
+              >
+                <span>Hire Me</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              {/* Secondary CTA: Discuss a Project (opens popup) */}
+              <button
+                onClick={() => openLeadPopup("Freelance Project")}
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-xl transition-all duration-200 cursor-pointer"
+              >
+                <span>Discuss a Project</span>
+              </button>
+
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-secondary via-orange-500 to-amber-500 rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center gap-1.5 px-4 py-3.5 text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-colors"
               >
-                <span>View Real-World Projects</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Explore Projects</span>
+                <span className="text-secondary">&darr;</span>
               </Link>
-
-              <Link
-                href="#performance"
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-xl transition-all duration-200"
-              >
-                <Gauge className="w-4 h-4 text-emerald-400" />
-                <span>Speed Optimization</span>
-              </Link>
-
-              <button
-                onClick={() => openLeadPopup("Hero Section Direct Inquiry")}
-                className="inline-flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-900/60 rounded-xl transition-colors cursor-pointer"
-              >
-                <span>Get In Touch</span>
-              </button>
             </div>
 
             {/* Direct Contact Snippets */}
@@ -141,10 +144,10 @@ export const HeroSection: React.FC = () => {
               <span className="text-slate-700">•</span>
               <span>Pune, Maharashtra, India</span>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Column: Interactive Architecture Snapshot Card */}
-          <div className="lg:col-span-5">
+          <FadeIn variant="fadeIn" delay={0.15} className="lg:col-span-5">
             <div className="relative rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-slate-800/90 p-6 shadow-2xl backdrop-blur-xl space-y-6">
               {/* Card Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -218,11 +221,11 @@ export const HeroSection: React.FC = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
 
         {/* Bottom Metrics Bar */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-slate-900">
+        <FadeIn variant="slideUp" delay={0.25} className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-slate-900">
           {STATS.map((stat, idx) => (
             <div
               key={idx}
@@ -239,7 +242,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
 
 interface LeadPopupContextType {
   isOpen: boolean;
@@ -11,11 +11,12 @@ interface LeadPopupContextType {
 
 const LeadPopupContext = createContext<LeadPopupContextType | undefined>(undefined);
 
-const SESSION_KEY = "lead_popup_shown_session";
+const AUTO_TRIGGER_KEY = "lead_popup_auto_triggered_v2";
 
 export const LeadPopupProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<string | undefined>(undefined);
+  const hasTriggeredRef = useRef(false);
 
   const openLeadPopup = useCallback((service?: string) => {
     setSelectedService(service);
@@ -26,24 +27,51 @@ export const LeadPopupProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsOpen(false);
   }, []);
 
-  // 5-second automatic trigger on first visit per browser session
+  // Automatic triggers: 5-second timer & 50% scroll depth
   useEffect(() => {
     try {
-      const alreadyShown = sessionStorage.getItem(SESSION_KEY);
-      if (!alreadyShown) {
-        const timer = setTimeout(() => {
-          setIsOpen(true);
-          sessionStorage.setItem(SESSION_KEY, "true");
-        }, 5000);
-
-        return () => clearTimeout(timer);
+      if (typeof window === "undefined") return;
+      const alreadyTriggered = sessionStorage.getItem(AUTO_TRIGGER_KEY);
+      if (alreadyTriggered) {
+        hasTriggeredRef.current = true;
+        return;
       }
+
+      const triggerAutoPopup = () => {
+        if (!hasTriggeredRef.current) {
+          hasTriggeredRef.current = true;
+          sessionStorage.setItem(AUTO_TRIGGER_KEY, "true");
+          setIsOpen(true);
+        }
+      };
+
+      // 1. Trigger A: 5 seconds after page load
+      const timer = setTimeout(() => {
+        triggerAutoPopup();
+      }, 5000);
+
+      // 2. Trigger B: ~50% scroll depth
+      const handleScroll = () => {
+        if (hasTriggeredRef.current) return;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const totalHeight = document.documentElement.scrollHeight;
+        if (totalHeight > 0 && scrollPosition >= totalHeight * 0.48) {
+          triggerAutoPopup();
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener("scroll", handleScroll);
+      };
     } catch {
-      // Catch possible security restrictions with sessionStorage
+      // Gracefully handle any sessionStorage restrictions
     }
   }, []);
 
-  // Close on Escape key
+  // Close on Escape key & manage body scroll lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {

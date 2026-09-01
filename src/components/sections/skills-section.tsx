@@ -26,6 +26,7 @@ import {
   FileSpreadsheet,
   CheckCircle2,
 } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const ICON_MAP: Record<string, React.ElementType> = {
   Zap,
@@ -99,7 +100,7 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <FadeIn variant="slideUp" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredSkills.map((skill: SkillItem, idx: number) => {
             const Icon = ICON_MAP[skill.iconName] || Code2;
 
@@ -153,7 +154,7 @@ export const SkillsSection: React.FC = () => {
               </div>
             );
           })}
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );

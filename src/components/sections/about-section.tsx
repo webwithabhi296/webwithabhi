@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/layout/section-heading";
+import { useLeadPopup } from "@/context/lead-popup-context";
+import { FadeIn } from "@/components/ui/fade-in";
 import {
   Code,
   Gauge,
@@ -17,6 +19,8 @@ import {
 } from "lucide-react";
 
 export const AboutSection: React.FC = () => {
+  const { openLeadPopup } = useLeadPopup();
+
   const philosophies = [
     {
       icon: Globe,
@@ -55,7 +59,7 @@ export const AboutSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8">
           {/* Left Column: Bio & Story */}
-          <div className="lg:col-span-6 space-y-6">
+          <FadeIn variant="fadeUp" className="lg:col-span-6 space-y-6">
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-5">
               <h3 className="text-xl sm:text-2xl font-bold text-white">
                 Web Developer &amp; Optimization Specialist in Pune, India
@@ -84,7 +88,7 @@ export const AboutSection: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
                   <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>25+ Shipped Websites</span>
+                  <span>50+ Websites Worked On</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
                   <Gauge className="w-4 h-4 text-amber-400 shrink-0" />
@@ -93,13 +97,13 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-secondary hover:bg-orange-600 rounded-xl transition-all shadow-md shadow-secondary/20"
+                <button
+                  onClick={() => openLeadPopup("Freelance Project")}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-secondary hover:bg-orange-600 rounded-xl transition-all shadow-md shadow-secondary/20 cursor-pointer"
                 >
-                  <span>Start a Project Discussion</span>
+                  <span>Discuss a Project</span>
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </button>
                 <Link
                   href="#services"
                   className="inline-flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition-all"
@@ -108,10 +112,10 @@ export const AboutSection: React.FC = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Column: Key Competency Pillars */}
-          <div className="lg:col-span-6 space-y-4">
+          <FadeIn variant="fadeUp" delay={0.15} className="lg:col-span-6 space-y-4">
             <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-secondary" />
               <span>Core Technical Pillars</span>
@@ -146,10 +150,10 @@ export const AboutSection: React.FC = () => {
                 <span>Professional Commitment</span>
               </h4>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Delivering reliable, scalable web solutions that combine clean code, outstanding Core Web Vitals, and proactive maintenance to help businesses capture and convert more leads.
+                Delivering reliable, scalable web solutions that combine clean code, outstanding Core Web Vitals, and proactive maintenance to help businesses capture and convert more leads. Available for full-time opportunities and freelance projects.
               </p>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </Container>
     </section>

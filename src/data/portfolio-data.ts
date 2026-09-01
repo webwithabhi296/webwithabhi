@@ -482,16 +482,24 @@ export const PROJECTS: ProjectItem[] = [
     impactMetric: "96+ Mobile Performance & 50% Lower Bounce Rate",
     architectureHighlight:
       "Custom post type hierarchy, dynamic search filters, streamlined booking form routing, and Redis caching.",
-    tags: ["WordPress", "Custom Theme", "PHP", "MySQL", "Speed Optimization", "Technical SEO"],
+    tags: [
+      "WordPress Development",
+      "Custom Development",
+      "Performance Optimization",
+      "Technical SEO",
+      "Website Maintenance",
+      "PHP",
+    ],
     liveUrl: "https://www.trexova.com/2/",
     featured: true,
     challengesSolved:
       "Replaced sluggish visual builder bloat with lightweight custom PHP templates, slashing page weight by 65%.",
     keyFeatures: [
-      "Bespoke WordPress theme development from scratch",
-      "ACF Pro custom retreat packages & booking fields",
-      "Plugin integration & WhatsApp instant booking funnel",
-      "Proactive Annual Maintenance Contract (AMC) & security scans",
+      "WordPress Development: Bespoke custom theme engineering from scratch",
+      "Website Maintenance: Ongoing AMC, security hardening, and zero-downtime updates",
+      "Performance Optimization: 96+ Core Web Vitals score on mobile devices",
+      "Technical SEO: Schema markup, XML sitemaps, and optimized crawl hierarchy",
+      "Custom Development: ACF Pro custom retreat listings & instant booking funnels",
     ],
   },
   {
@@ -506,16 +514,24 @@ export const PROJECTS: ProjectItem[] = [
     impactMetric: "95+ PageSpeed Score & 40% Increase in Consultation Leads",
     architectureHighlight:
       "Custom PHP components, medical schema markup, optimized asset pipelines, and database query tuning.",
-    tags: ["WordPress", "PHP", "Elementor Customization", "Technical SEO", "Speed Optimization"],
+    tags: [
+      "WordPress Development",
+      "Custom Development",
+      "Performance Optimization",
+      "Technical SEO",
+      "Website Maintenance",
+      "PHP",
+    ],
     liveUrl: "https://dnadcode.com/",
     featured: true,
     challengesSolved:
       "Engineered clean modular widgets and lightweight custom assets on top of Elementor, ensuring fast loads despite rich scientific illustrations.",
     keyFeatures: [
-      "Custom WordPress theme customization and branding",
-      "HIPAA-friendly patient inquiry form integration",
-      "Structured schema markup for clinical organization SEO",
-      "Ongoing maintenance, security hardening, and updates",
+      "WordPress Development: Bespoke clinical theme styling and responsive layout",
+      "Website Maintenance: Proactive plugin patches, core upgrades, and database cleanup",
+      "Performance Optimization: Sub-second initial render with WebP image compression",
+      "Technical SEO: Comprehensive medical organization schema markup",
+      "Custom Development: HIPAA-compliant patient intake funnels and CRM routing",
     ],
   },
   {
@@ -530,16 +546,24 @@ export const PROJECTS: ProjectItem[] = [
     impactMetric: "Sub-0.6s TTFB & 2.5x Increase in Webinar Registrations",
     architectureHighlight:
       "Database query optimization, server-level page caching, CRM webhook routing, and lightweight responsive UI.",
-    tags: ["WordPress", "PHP", "MySQL", "Lead Funnel", "Speed Optimization", "Maintenance"],
+    tags: [
+      "WordPress Development",
+      "Custom Development",
+      "Website Maintenance",
+      "Performance Optimization",
+      "Technical SEO",
+      "MySQL",
+    ],
     liveUrl: "https://www.thegainers.in/",
     featured: true,
     challengesSolved:
       "Prevented site slowdowns during high-volume advertising spikes by configuring database indexing and object caching.",
     keyFeatures: [
-      "Zero-bloat custom theme and course directory",
-      "Frictionless webinar lead capture forms",
-      "Cache warmup and PageSpeed optimization",
-      "Regular backup management and uptime monitoring",
+      "WordPress Development: Clean PHP template architecture and course catalog",
+      "Website Maintenance: Continuous uptime tracking, backup routines, and database maintenance",
+      "Performance Optimization: Aggressive page caching delivering sub-0.6s TTFB",
+      "Technical SEO: Structured course and educational organization markup",
+      "Custom Development: High-converting webinar enrollment forms and lead captures",
     ],
   },
   {
@@ -554,7 +578,7 @@ export const PROJECTS: ProjectItem[] = [
     impactMetric: "98/100 PageSpeed & 45% Increase in Inquiries",
     architectureHighlight:
       "Custom PHP theme with modular ACF fields, asset optimization layer, and automated SEO schema injection.",
-    tags: ["WordPress", "Custom PHP Theme", "JavaScript", "MySQL", "ACF Pro", "Technical SEO"],
+    tags: ["WordPress Development", "Custom Development", "Performance Optimization", "Technical SEO", "Website Maintenance"],
     liveUrl: "https://sedibuz.com",
     featured: false,
     challengesSolved:
@@ -582,16 +606,16 @@ export const PROJECTS: ProjectItem[] = [
     impactMetric: "38% Conversion Rate & Sub-0.5s Mobile Load",
     architectureHighlight:
       "Minimalist lightweight DOM, inline critical CSS, asynchronous tracking scripts, and instant form validation.",
-    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "Lead Generation", "Conversion Rate Optimization"],
+    tags: ["WordPress", "HTML5", "PHP", "Lead Generation", "Form Optimization", "Mobile Responsive"],
     liveUrl: "https://collegencourses.com/top-10-distance-mba-universities-colleges-north-zone/",
     featured: true,
     challengesSolved:
       "Optimized multi-step forms to minimize user drop-off while validating student mobile numbers in real time.",
     keyFeatures: [
-      "Interactive university comparison matrix",
-      "Mobile-responsive lead capture funnels",
-      "Direct CRM webhook data synchronization",
-      "High-velocity Google Ads landing page optimization",
+      "Mobile responsive implementation tested across all smartphone viewports",
+      "Lead generation focus targeting high-intent MBA aspirants",
+      "Form optimization with real-time phone number verification and instant error feedback",
+      "Technologies used: HTML5, CSS3, JavaScript, PHP, Lead Funnels",
     ],
   },
   {
@@ -606,16 +630,112 @@ export const PROJECTS: ProjectItem[] = [
     impactMetric: "+140% Qualified Executive Student Inquiries",
     architectureHighlight:
       "Accelerated mobile load time, clean typography, conversion-driven visual cues, and technical SEO hierarchy.",
-    tags: ["HTML5", "JavaScript", "Conversion Optimization", "Mobile UI", "Lead Funnel"],
+    tags: ["WordPress", "JavaScript", "Lead Generation", "Form Optimization", "Mobile Responsive"],
     liveUrl: "https://collegencourses.com/iim-online-distance-learnings/",
     featured: true,
     challengesSolved:
       "Achieved sub-second first contentful paint (FCP) on mobile networks for paid search ad visitors.",
     keyFeatures: [
-      "Frictionless executive lead capture forms",
-      "Mobile-first responsive layout",
-      "Compelling social proof and credential badges",
-      "Zero-latency form validation",
+      "Mobile responsive implementation tailored for mobile professionals on the go",
+      "Lead generation focus with executive eligibility checker and brochure gating",
+      "Form optimization reducing fields to essentials for friction-free submissions",
+      "Technologies used: HTML5, CSS3, JavaScript, PHP, Conversion Rate Optimization",
+    ],
+  },
+  {
+    id: "insdpunepcmc-industry-focused",
+    title: "INSD Pune — Industry-Focused Design Programs",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "Higher education campaign landing page engineered to drive qualified student admissions for industry-accredited design diploma and degree courses.",
+    longDescription:
+      "Built an admission-focused education landing page for INSD Pune PCMC showcasing industry-aligned creative programs, campus facility highlights, student placement statistics, and instant counselling application triggers.",
+    impactMetric: "3.4x Growth in Qualified Student Admission Leads",
+    architectureHighlight:
+      "Mobile-first responsive layout, critical asset preloading, sticky mobile inquiry bar, and CRM webhook routing.",
+    tags: ["WordPress", "PHP", "Mobile Responsive", "Lead Generation", "Form Optimization"],
+    liveUrl: "https://insdpunepcmc.com/industry-focused-programs/",
+    featured: true,
+    challengesSolved:
+      "Built a seamless mobile enrollment pathway with zero form fatigue, capturing high-intent student leads directly into the admissions CRM.",
+    keyFeatures: [
+      "Mobile responsive implementation with smooth mobile touch navigation and responsive media",
+      "Lead generation focus featuring sticky CTA bars and instant callback requests",
+      "Form optimization with single-step admission enquiry and automated field validation",
+      "Technologies used: WordPress, Custom Theme, PHP, JavaScript, CSS3 Grid, CRO",
+    ],
+  },
+  {
+    id: "insdpunepcmc-interior-design",
+    title: "INSD Pune — Degree in Interior Design",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "Specialized design degree admissions landing page presenting interior design course curriculum, studio workshops, and dynamic lead capture.",
+    longDescription:
+      "Engineered an interior design degree admission landing page with rich visual storytelling, alumni work showcases, curriculum breakdown tabs, and interactive counseling booking funnels.",
+    impactMetric: "+65% Increase in Scheduled Campus Visits",
+    architectureHighlight:
+      "High-speed image compression pipeline, conversion-oriented typography, and frictionless lead intake forms.",
+    tags: ["WordPress", "PHP", "Mobile Responsive", "Lead Generation", "Form Optimization"],
+    liveUrl: "https://insdpunepcmc.com/degree-in-interior-design/",
+    featured: true,
+    challengesSolved:
+      "Maintained sub-second load times despite showcasing high-resolution interior design project galleries.",
+    keyFeatures: [
+      "Mobile responsive implementation ensuring stunning presentation across all screen widths",
+      "Lead generation focus driving brochure downloads and campus visit bookings",
+      "Form optimization with smart input masking and zero-latency submission handling",
+      "Technologies used: WordPress, PHP, JavaScript, Responsive Design, CRO",
+    ],
+  },
+  {
+    id: "trexova-prenatal-yoga",
+    title: "Trexova Prenatal Yoga Trainer at Home",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "Hyper-local high-intent landing page for at-home prenatal and postnatal yoga sessions with certified expert trainers.",
+    longDescription:
+      "Designed a sensitive, high-trust landing page for expectant mothers seeking certified home yoga instruction. Included safety certifications, personalized trimester benefits, and instant consultation scheduling.",
+    impactMetric: "3.2x Increase in Consultation Booking Calls",
+    architectureHighlight:
+      "High-trust healthcare visual cues, one-tap mobile calling and WhatsApp scheduling triggers, and zero-friction forms.",
+    tags: ["WordPress", "Mobile Responsive", "Lead Generation", "Form Optimization", "Local SEO"],
+    liveUrl: "https://www.trexova.com/2/yoga/prenatal-yoga-trainer-at-home/",
+    featured: true,
+    challengesSolved:
+      "Streamlined booking to a single tap, reducing form friction for busy expectant mothers on mobile devices.",
+    keyFeatures: [
+      "Mobile responsive implementation optimized for one-hand mobile navigation",
+      "Lead generation focus with direct click-to-WhatsApp and phone consultation buttons",
+      "Form optimization enabling 2-step booking with minimal typing required",
+      "Technologies used: WordPress, PHP, Local SEO, Mobile CRO, Core Web Vitals",
+    ],
+  },
+  {
+    id: "dnadcode-anti-aging",
+    title: "DNA DCode Anti-Aging Genetic Screening",
+    category: "landing",
+    categoryLabel: "Landing Pages & Conversion Optimization",
+    description:
+      "High-converting landing page for specialized genetic testing, cellular longevity analysis, and anti-aging wellness protocols.",
+    longDescription:
+      "Engineered a high-converting landing page for premium genetic screening. Built with scientific credibility cues, sample report previews, patient privacy guarantees, and frictionless appointment booking.",
+    impactMetric: "45% Increase in Premium Screening Bookings",
+    architectureHighlight:
+      "Scientific credential layout, trust badges, instant validation lead forms, and WebP asset pipeline.",
+    tags: ["WordPress", "Mobile Responsive", "Lead Generation", "Form Optimization", "Health Tech"],
+    liveUrl: "https://dnadcode.com/anti-aging/",
+    featured: true,
+    challengesSolved:
+      "Communicated complex genetic science in an approachable, high-converting visual hierarchy.",
+    keyFeatures: [
+      "Mobile responsive implementation with readable clinical layout across devices",
+      "Lead generation focus with sample genetic report previews and doctor consultation gating",
+      "Form optimization with secure patient inquiry routing and field validation",
+      "Technologies used: WordPress, Elementor Customization, JavaScript, Health Tech CRO",
     ],
   },
   {
@@ -632,7 +752,7 @@ export const PROJECTS: ProjectItem[] = [
       "Modular value-proposition sections, trust signals, enterprise inquiry routing, and asset optimization.",
     tags: ["WordPress", "Landing Page", "B2B Lead Gen", "CRO", "Speed Optimization"],
     liveUrl: "https://www.trexova.com/2/corporate-wellness-a-path-to-thriving-teams-and-sustainable-productivity/",
-    featured: true,
+    featured: false,
     challengesSolved:
       "Positioned complex multi-day retreat packages into clear, actionable executive corporate tiers.",
     keyFeatures: [
@@ -656,7 +776,7 @@ export const PROJECTS: ProjectItem[] = [
       "Geo-targeted content architecture, high-resolution responsive WebP imagery, and fast international CDN delivery.",
     tags: ["WordPress", "Landing Page", "International SEO", "CRO", "Mobile First"],
     liveUrl: "https://www.trexova.com/2/uk/wellness-holidays-in-india/",
-    featured: true,
+    featured: false,
     challengesSolved:
       "Delivered rich visual retreat photography while maintaining strict Core Web Vitals under 1.2s LCP.",
     keyFeatures: [
@@ -666,54 +786,6 @@ export const PROJECTS: ProjectItem[] = [
       "Full mobile touch responsiveness",
     ],
   },
-  {
-    id: "trexova-prenatal-yoga",
-    title: "Trexova Prenatal Yoga Trainer at Home",
-    category: "landing",
-    categoryLabel: "Landing Pages & Conversion Optimization",
-    description:
-      "Hyper-local high-intent landing page for at-home prenatal and postnatal yoga sessions with certified expert trainers.",
-    longDescription:
-      "Designed a sensitive, high-trust landing page for expectant mothers seeking certified home yoga instruction. Included safety certifications, personalized trimester benefits, and instant consultation scheduling.",
-    impactMetric: "3.2x Increase in Consultation Booking Calls",
-    architectureHighlight:
-      "High-trust healthcare visual cues, one-tap mobile calling and WhatsApp scheduling triggers, and zero-friction forms.",
-    tags: ["WordPress", "Landing Page", "Local SEO", "Mobile CRO", "Speed Tuning"],
-    liveUrl: "https://www.trexova.com/2/yoga/prenatal-yoga-trainer-at-home/",
-    featured: true,
-    challengesSolved:
-      "Streamlined booking to a single tap, reducing form friction for busy expectant mothers on mobile devices.",
-    keyFeatures: [
-      "Direct click-to-WhatsApp and phone consultation buttons",
-      "Trimester-specific benefit breakdowns",
-      "Certified trainer trust badges and testimonials",
-      "Sub-second mobile loading speed",
-    ],
-  },
-  {
-    id: "dnadcode-anti-aging",
-    title: "DNA DCode Anti-Aging Genetic Screening",
-    category: "landing",
-    categoryLabel: "Landing Pages & Conversion Optimization",
-    description:
-      "High-converting landing page for specialized genetic testing, cellular longevity analysis, and anti-aging wellness protocols.",
-    longDescription:
-      "Engineered a high-converting landing page for premium genetic screening. Built with scientific credibility cues, sample report previews, patient privacy guarantees, and frictionless appointment booking.",
-    impactMetric: "45% Increase in Premium Screening Bookings",
-    architectureHighlight:
-      "Scientific credential layout, trust badges, instant validation lead forms, and WebP asset pipeline.",
-    tags: ["WordPress", "Landing Page", "Health Tech", "Conversion Optimization", "Speed"],
-    liveUrl: "https://dnadcode.com/anti-aging/",
-    featured: true,
-    challengesSolved:
-      "Communicated complex genetic science in an approachable, high-converting visual hierarchy.",
-    keyFeatures: [
-      "Sample report preview gating",
-      "Frictionless patient inquiry form",
-      "Rigorous privacy & security trust indicators",
-      "Responsive layout optimized across all screen sizes",
-    ],
-  },
 ];
 
 export const EXPERIENCES: ExperienceItem[] = [
@@ -721,7 +793,6 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "magicworks",
     role: "Web Developer",
     company: "Magicworksit Sol. Pvt. Ltd",
-    companyUrl: "https://magicworks.in",
     location: "Pune, Maharashtra, India",
     period: "Jun 2024 – Present",
     isCurrent: true,
@@ -746,7 +817,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "freelance-foundation",
-    role: "WordPress & Web Developer (Currently Working)",
+    role: "WordPress & Web Developer",
     company: "Web With Abhi",
     location: "Pune, India",
     period: "2025 – Present",
