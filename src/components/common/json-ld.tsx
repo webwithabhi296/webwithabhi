@@ -14,6 +14,7 @@ export const JsonLd: React.FC = () => {
       name: "Magicworksit Sol. Pvt. Ltd",
     },
     url: siteConfig.url,
+    image: `${siteConfig.url}/og-image.png`,
     email: siteConfig.email,
     telephone: `+91-${siteConfig.phone}`,
     address: {
@@ -53,6 +54,8 @@ export const JsonLd: React.FC = () => {
     "@type": "ProfessionalService",
     name: siteConfig.brandName,
     url: siteConfig.url,
+    logo: `${siteConfig.url}/apple-touch-icon.png`,
+    image: `${siteConfig.url}/og-image.png`,
     telephone: `+91-${siteConfig.phone}`,
     priceRange: "$$",
     address: {

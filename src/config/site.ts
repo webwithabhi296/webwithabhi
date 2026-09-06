@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Professional portfolio of Abhishek Panchgalle (Web With Abhi) - WordPress Developer, Next.js Engineer, and Performance Optimization Specialist based in Pune, India. Available for full-time engineering roles, freelance client projects, and website maintenance (AMC) contracts.",
   url: "https://webwithabhi.com",
-  ogImage: "/assets/og-image.png",
+  ogImage: "/og-image.png",
   links: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",

@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Phone,
   Mail,
-  Gauge,
   Globe,
 } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";

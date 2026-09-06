@@ -33,12 +33,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
-    type: "profile",
-    firstName: "Abhishek",
-    lastName: "Panchgalle",
-    username: "magicabhi",
-    gender: "male",
+    type: "website",
     locale: "en_US",
     url: siteConfig.url,
     title: `${siteConfig.ownerName} | ${siteConfig.brandName} - Next.js Architect & Full Stack WordPress Developer`,
@@ -46,10 +54,11 @@ export const metadata: Metadata = {
     siteName: siteConfig.brandName,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.ownerName} - Senior Next.js Architect & Full Stack Developer`,
+        alt: `${siteConfig.brandName} Logo - Abhishek Panchgalle`,
+        type: "image/png",
       },
     ],
   },
@@ -58,7 +67,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.ownerName} | ${siteConfig.brandName}`,
     description: siteConfig.description,
     creator: "@webwithabhi",
-    images: [siteConfig.ogImage],
+    images: ["/twitter-image.png"],
   },
   robots: {
     index: true,
