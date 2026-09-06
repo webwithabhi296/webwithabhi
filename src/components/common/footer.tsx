@@ -9,9 +9,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  Github,
   Linkedin,
-  Twitter,
   MessageSquare,
 } from "lucide-react";
 
@@ -57,36 +55,18 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-2 pt-2">
               <a
-                href={siteConfig.links.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub Profile"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-secondary hover:bg-slate-800 transition-colors"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
                 href={siteConfig.links.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
                 className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-secondary hover:bg-slate-800 transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href={siteConfig.links.twitter}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Twitter Profile"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-secondary hover:bg-slate-800 transition-colors"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
                 href={siteConfig.links.whatsapp}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp Chat"
                 className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500 hover:bg-slate-800 transition-colors"
               >

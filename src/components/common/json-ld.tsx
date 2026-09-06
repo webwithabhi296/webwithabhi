@@ -24,9 +24,7 @@ export const JsonLd: React.FC = () => {
       addressCountry: "IN",
     },
     sameAs: [
-      siteConfig.links.github,
       siteConfig.links.linkedin,
-      siteConfig.links.twitter,
     ],
     knowsAbout: [
       "Custom WordPress Development",

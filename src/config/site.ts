@@ -19,7 +19,7 @@ export const siteConfig: SiteConfig = {
   ogImage: "/og-image.png",
   links: {
     github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/abhishek-panchgalle-782b48265",
     twitter: "https://twitter.com",
     whatsapp: "https://wa.me/918421903846?text=Hi%20Abhishek,%20I%20would%20like%20to%20discuss%20a%20project%20or%20job%20opportunity.",
   },
