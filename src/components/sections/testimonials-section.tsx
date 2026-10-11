@@ -140,7 +140,13 @@ export const TestimonialsSection: React.FC = () => {
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     </div>
                     <div className="text-xs text-slate-400">
-                      {item.role} • <span className="text-secondary font-medium">{item.company}</span>
+                      {item.role}
+                      {item.company ? (
+                        <>
+                          {" • "}
+                          <span className="text-secondary font-medium">{item.company}</span>
+                        </>
+                      ) : null}
                     </div>
                   </div>
                 </div>

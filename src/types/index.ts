@@ -135,7 +135,7 @@ export interface TestimonialItem {
   quote: string;
   author: string;
   role: string;
-  company: string;
+  company?: string;
   avatarText: string;
   rating: number;
 }

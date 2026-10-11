@@ -448,9 +448,9 @@ export const PROJECTS: ProjectItem[] = [
     category: "nextjs",
     categoryLabel: "Featured Next.js & AI SaaS",
     description:
-      "Modern AI-powered cloud hosting SaaS platform featuring intelligent server provisioning workflows and automated infrastructure configuration.",
+      "Modern AI-powered cloud hosting SaaS platform featuring intelligent server provisioning workflows and automated infrastructure configuration. The platform includes a centralized custom admin dashboard for managing website operations, including website cache management, image and media management, website content and settings management, user management, Hosting Assistant chatbot management, and pages and blog posts management.",
     longDescription:
-      "Engineered MW Host AI, a high-performance web platform featuring modern SaaS architecture, responsive user interface, scalable codebase, and AI integration for streamlined hosting operations and instant server deployment.",
+      "Engineered MW Host AI, a high-performance web platform featuring modern SaaS architecture, responsive user interface, scalable codebase, and AI integration for streamlined hosting operations and instant server deployment. Built with a centralized custom admin dashboard for managing day-to-day website operations, including website cache management, image and media management, website content and settings configuration, user management, Hosting Assistant chatbot administration, and pages and blog posts management.",
     impactMetric: "99+ PageSpeed Score & Sub-Second Page Transitions",
     architectureHighlight:
       "Next.js App Router, AI pipeline integration, scalable modular component system, and automated Vercel CI/CD.",
@@ -1014,18 +1014,16 @@ export const TESTIMONIALS: TestimonialItem[] = [
       "Abhishek optimized our consulting portal with remarkable precision. Our website loading speed jumped from 38 to 98 on Google PageSpeed, and our Core Web Vitals turned all green. The lead conversion rate on our contact forms increased significantly.",
     author: "Enterprise Client Lead",
     role: "Managing Director",
-    company: "Sedibuz Consulting",
-    avatarText: "SC",
+    avatarText: "EL",
     rating: 5,
   },
   {
     id: "2",
     quote:
-      "Abhishek delivers clean, maintainable WordPress and Next.js solutions at Magicworks. Whether building custom theme architectures or resolving performance bottlenecks, his attention to detail and technical execution is consistently outstanding.",
+      "Abhishek delivers clean, maintainable WordPress and Next.js solutions. Whether building custom theme architectures or resolving performance bottlenecks, his attention to detail and technical execution is consistently outstanding.",
     author: "Technical Lead",
     role: "Senior Engineering Manager",
-    company: "Magicworksit Sol.",
-    avatarText: "MW",
+    avatarText: "TL",
     rating: 5,
   },
   {
@@ -1034,28 +1032,25 @@ export const TESTIMONIALS: TestimonialItem[] = [
       "From high-converting landing pages for education campaigns to custom WordPress builds, Abhishek's turnaround time and code quality make him a reliable developer. He understands both user conversion and speed optimization.",
     author: "Marketing Director",
     role: "Campaign Lead",
-    company: "BrandupX Agency",
-    avatarText: "BX",
+    avatarText: "MD",
     rating: 5,
   },
   {
     id: "4",
     quote:
-      "Abhishek completely transformed our healthcare portal and retreat booking funnels at Trexova. The custom WordPress architecture handles high ad traffic with zero slowdowns, and our prenatal yoga and retreat inquiry rates surged by over 40%.",
+      "Abhishek completely transformed our healthcare portal and retreat booking funnels. The custom WordPress architecture handles high ad traffic with zero slowdowns, and our prenatal yoga and retreat inquiry rates surged by over 40%.",
     author: "Operations Lead",
     role: "Platform Director",
-    company: "Trexova Wellness",
-    avatarText: "TW",
+    avatarText: "OL",
     rating: 5,
   },
   {
     id: "5",
     quote:
-      "The Next.js and Sanity CMS setup Abhishek engineered for OMC 2.0 is world-class. It loads in under 0.4 seconds, gives our editorial team seamless content workflows, and achieved perfect Lighthouse performance scores across all metrics.",
+      "The Next.js and Sanity CMS setup Abhishek engineered for our education platform is world-class. It loads in under 0.4 seconds, gives our editorial team seamless content workflows, and achieved perfect Lighthouse performance scores across all metrics.",
     author: "Product & Growth Lead",
     role: "Co-Founder",
-    company: "OMC 2.0 Education",
-    avatarText: "OM",
+    avatarText: "PG",
     rating: 5,
   },
   {
@@ -1064,8 +1059,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
       "Reliable, detail-oriented, and technically sharp. Abhishek built our custom WordPress theme from scratch with zero bloat and continues to handle our website AMC, security scans, and speed maintenance flawlessly.",
     author: "Managing Partner",
     role: "Head of Digital",
-    company: "The Gainers Financial",
-    avatarText: "TG",
+    avatarText: "MP",
     rating: 5,
   },
 ];
